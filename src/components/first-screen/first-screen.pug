@@ -1,0 +1,16 @@
+mixin first-screen(args)
+    .first-screen&attributes(attributes)
+        .first-screen__layer-1
+        .first-screen__layer-2
+        .first-screen__layer-blue
+            h1.first-screen__layer-blue--title
+                | Пенз
+                br
+                | Гидро
+                br
+                | Маш
+        .first-screen__footer
+            .first-screen__footer--line
+            .first-screen__footer--text 13 лет производим промышленное оборудование
+        .first-screen__layer-tank
+            +img({path: '../../components/first-screen/images/title-tank.png'})
