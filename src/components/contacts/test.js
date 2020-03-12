@@ -1,9 +1,9 @@
 const { describe, it } = require('mocha');
 const { assert } = require('chai');
 
-import FirstScreen from './first-screen';
+import Contacts from './contacts';
 
-describe('Компонент - "first-screen"', () => {
+describe('Компонент - "contacts"', () => {
     describe('подзаголовок подруппы тестов', () => {
         it('описание проверки', () => {});
     });
