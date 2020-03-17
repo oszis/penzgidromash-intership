@@ -16,5 +16,14 @@
   },
   {
     "name": "picture"
+  },
+  {
+    "name": "description-block"
+  },
+  {
+    "name": "catalog-item"
+  },
+  {
+    "name": "arrow-link"
   }
 ]

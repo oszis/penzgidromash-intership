@@ -1,0 +1,9 @@
+mixin catalog-item(args)
+    a(href=args.linkPath).catalog-item.col-24.col-xl-12&attributes(attributes)
+        .catalog-item__background
+            +img({path: args.imgPath})('data-object-fit'= 'cover').catalog-item__background-image
+        .catalog-item__content
+            h3.catalog-item__title!= args.title
+            .catalog-item__arrow
+                +svg({name: 'catalog-item-arrow'}).catalog-item__arrow-svg.catalog-item__arrow-svg--flying
+                +svg({name: 'catalog-item-arrow'}).catalog-item__arrow-svg

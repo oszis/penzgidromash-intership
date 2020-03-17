@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Емкости и&nbsp;резервуары",
+      "imgPath": "../index/images/capacities-tanks.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Аппараты емкостные и&nbsp;сосуды",
+      "imgPath": "../index/images/capacitive-apparatus-vessels.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Сепарационное оборудование и&nbsp;отстойники",
+      "imgPath": "../index/images/separation-equipment-sedimentation-tanks.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Аппараты теплообменные",
+      "imgPath": "../index/images/heat-exchangers.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Ресиверы газа и&nbsp;воздуха",
+      "imgPath": "../index/images/gas-air-recievers.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Резервуары вертикальные РВС",
+      "imgPath": "../index/images/tanks-vertical-rvs.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Нестандартное оборудование",
+      "imgPath": "../index/images/non-standard-equipment.png",
+      "linkPath": "#"
+    },
+    {
+      "title": "Металлообработка",
+      "imgPath": "../index/images/metalworking.png",
+      "linkPath": "#"
+    }
+]

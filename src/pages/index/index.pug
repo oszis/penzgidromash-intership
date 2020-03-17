@@ -1,5 +1,26 @@
 extends ../../layout/layout
+include ../../components/catalog-item/catalog-item
+include ../../components/description-block/description-block
 
 block content
     main#barba-wrapper
         .barba-container(data-namespace='index')
+            .row
+                .col-24.col-xl-23
+                    section.catalog
+                        +description-block({
+                            title: 'Каталог',
+                            description: 'Оборудование и услуги<br>для решения производственных задач',
+                            link: {
+                                text: 'Перейти в каталог',
+                                href: '#'
+                            }
+                        })
+                        .catalog__list
+                            .row
+                                each item in data.catalogItem
+                                    +catalog-item({
+                                        title: item.title,
+                                        imgPath: item.imgPath,
+                                        linkPath: item.linkPath
+                                })

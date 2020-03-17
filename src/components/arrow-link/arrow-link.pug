@@ -1,0 +1,5 @@
+mixin arrow-link(args)
+    a(href=args.href).arrow-link&attributes(attributes)
+        .arrow-link__text!= args.text
+        .arrow-link__arrow
+            +svg({name: 'arrow-link'})
