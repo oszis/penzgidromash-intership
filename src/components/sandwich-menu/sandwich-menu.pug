@@ -1,3 +1,17 @@
+include ../../common/pug/mixins
+
 mixin sandwich-menu(args)
     .sandwich-menu&attributes(attributes)
-        
+        .sandwich-bg
+        .sandwich-menu__content
+            .sandwich-menu__list
+                each menuItem in args
+                    li.sandwich-menu__list-item
+                        a.sandwich-menu__item(href=menuItem.link ? menuItem.link : '#')!= menuItem.text ? menuItem.text : ''
+                            +svg({name: 'arrow'}).sandwich-menu__item-arrow
+        .sandwich-menu__footer
+            .sandwich-menu__footer-item
+                .sandwich-menu__footer-adress!='Пенза, ул. Аустрина, дом 63, корпус 7'
+            .sandwich-menu__footer-item
+                a.sandwich-menu__footer-phone(href='tel:88412458999')!= '8 (8412) 45-89-99'
+                a.sandwich-menu__footer-email(href='mailto:om@penzgidromash.ru')!= 'om@penzgidromash.ru'
