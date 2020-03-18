@@ -8,7 +8,7 @@
     justify-content: space-between;
     overflow: hidden;
     width: $col-width * 23;
-    font-family: Gilroy, serif;
+    font-family: $font-gilroy;
     padding: 100px $col-width;
 
     &__info {
