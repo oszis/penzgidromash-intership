@@ -76,6 +76,7 @@ input {
 html {
     height: 100%;
     scrollbar-width: none; /* ff */
+    font-size: 10px;
 }
 
 body {
@@ -96,6 +97,10 @@ body {
 
     &::-webkit-scrollbar {
         display: none; /* webkit */
+    }
+
+    &.no-scroll{
+        overflow-y: hidden;
     }
 }
 

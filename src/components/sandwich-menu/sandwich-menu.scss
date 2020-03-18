@@ -1,3 +1,164 @@
+@import "../../common/scss/colors";
+@import "../../common/scss/variables";
+@import "../../common/scss/fonts";
+
+
+/* === Меню закрыто (Стандартные параметры) === */
+
 .sandwich-menu {
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 98;
+    background: rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity 1s, visibility 1s;
+    visibility: hidden;
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        width: $col-width*12;
+        margin-left: $col-width*8;
+        margin-top: $col-width*1.25;
+        z-index: 99;
+        opacity: 0;
+        transform: translateY(-5%);
+        transition: transform .5s, opacity .3s;
+    }
+
+    &__list {
+        list-style: none;
+
+        &-item{
+            display: flex;
+            margin-bottom: $col-width*0.75;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        color: $color-1;
+        font: 8.4rem Gilroy;
+        cursor: pointer;
+        min-height: $col-width*0.75;
+        text-transform: lowercase;
+        transition: color .3s;
+
+        &:first-letter{
+            text-transform: uppercase;
+        }
+
+        &-container{
+            width: $col-width;
+            height: $col-width;
+            margin-left: $col-width;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-self: flex-end;
+        }
+
+        &-arrow {
+            width: $col-width*0.75*0.25;
+            height: $col-width*0.75*0.25;
+            transform: rotate(-135deg);
+            align-self: flex-end;
+            opacity: 0;
+            transition: opacity .4s, width .4s, height .4s;
+        }
+
+        &:hover {
+            color: $main-color;
+
+            .sandwich-menu__item-arrow {
+                width: $col-width;
+                height: $col-width;
+                stroke: $main-color;
+                opacity: 1;
+                transition: opacity .1s, width .4s, height .4s;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: $col-width*8;
+        width: $col-width*14;
+        height: $col-width*1.25;
+        z-index: 99;
+        opacity: 0;
+        transform: translateY(50%);
+        transition: transform .5s, opacity .3s;
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            width: $col-width*6;
+            color: $color-1;
+            font: 1.8rem /1.8 Gilroy;
+        }
+
+        &-email, &-phone{
+            text-decoration: none;
+            color: $color-1;
+            transition: color .3s;
+
+            &:hover{
+                color: $main-color;
+            }
+
+        }
+    }
+}
+
+.sandwich-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: $col-width*16;
+    margin-left: $col-width*7;
+    background: $color-5;
+    opacity: 1;
+    z-index: 98;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+}
+
+/* === Меню в открытом состоянии === */
+
+.side-menu--open {
+    .sandwich-menu {
+        visibility: visible;
+        opacity: 1;
+
+        &__content {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: .5s;
+        }
+
+        &__footer {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: .5s;
+        }
+    }
+
+    .sandwich-bg {
+        transform: translateX(0);
+    }
 }
