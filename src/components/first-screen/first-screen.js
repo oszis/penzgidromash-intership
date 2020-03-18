@@ -17,9 +17,11 @@ class FirstScreen extends Component {
     }
 
     initDesktop() {
+
     }
 
     initMobile() {
+
     }
 
     afterResize() {
@@ -36,9 +38,11 @@ class FirstScreen extends Component {
     }
 
     destroyDesktop() {
+
     }
 
     destroyMobile() {
+
     }
 
     destroy() {
