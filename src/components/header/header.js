@@ -4,7 +4,6 @@ class Header extends Component {
     constructor(nRoot) {
         super(nRoot, 'header');
 
-        const windowHeight = document.documentElement.clientHeight;
         const body = document.querySelector('body');
         const barbaContainer = document.querySelector('.barba-container');
         const header = document.querySelector('.header');
@@ -45,6 +44,7 @@ class Header extends Component {
         /* === Изменения шапки при скролле === */
 
         window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.clientHeight;
             /* === Появление навигации и изменение логотипа в начале документа === */
             if (window.pageYOffset <= 0 && !header.classList.contains('header--top')) {
                 header.classList.toggle('header--top');
