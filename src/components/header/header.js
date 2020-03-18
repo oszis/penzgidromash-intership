@@ -59,7 +59,7 @@ class Header extends Component {
             }
 
             /* === Появление кнопки скролла только на первом и последнем 'экране' документа === */
-            if (window.pageYOffset < windowHeight || window.pageYOffset >= document.body.scrollHeight - windowHeight) {
+            if (window.pageYOffset < windowHeight || window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.2) {
                 if (window.pageYOffset < windowHeight) {
                     header.classList.remove('arrow-up');
                     header.classList.add('arrow-down');
