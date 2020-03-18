@@ -57,7 +57,8 @@
         text-transform: uppercase;
         opacity: .5;
         color: $color-5;
-        font: 1.4rem /1.6 Gilroy;
+        //font: 1.4rem Gilroy;
+        @include font-4;
         transition: opacity .3s;
 
         &:hover{
@@ -139,7 +140,8 @@
             text-transform: uppercase;
             color: $color-1;
             transform: rotate(90deg);
-            font: 1.4rem /1.6 Gilroy;
+            //font: 1.4rem /1.6 Gilroy;
+            @include font-4;
             letter-spacing: 0.1em;
             transition: opacity .3s;
 

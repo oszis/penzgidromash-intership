@@ -1,50 +1,32 @@
 @import "./fonts.scss";
 
-//@mixin font-1 {
-//    $fhd-base-size: 60px;
-//    $tablet-base-size: $fhd-base-size * 0.6;
-//    font-family: Gilroy, sans-serif;
-//    font-size: calc(
-//            #{smooth-value(
-//                $tablet-base-size / 2,
-//                $fhd-base-size / 2,
-//                $screen-md-min,
-//                $fhd-width,
-//                "w"
-//              )} + #{smooth-value(
-//        $tablet-base-size / 2,
-//        $fhd-base-size / 2,
-//        $mobile-min-height,
-//        $fhd-height,
-//        "h"
-//      )}
-//    );
-//    @include media-breakpoint-up(fhd) {
-//        font-size: $fhd-base-size;
-//    }
-//    @include media-breakpoint-down(sm) {
-//        font-size: 38px;
-//    }
-//}
-//.tp_cnt {}
-//.tp_h-1 {}
-//.tp__p-1 {}
-//.tp-link {}
 
 @mixin font-1 {
     font-weight: 400;
-    font-size: 25px;
+    font-size: 2.5rem;
     line-height: 1.5;
 }
 
 @mixin font-2 {
-    font-weight: 300;
-    font-size: 47px;
+    font-weight: 400;
+    font-size: 4.7rem;
     line-height: 1.5;
 }
 
 @mixin font-3 {
-    font-weight: 300;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 1.8rem;
     line-height: 1.17;
+}
+
+@mixin font-4 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+@mixin font-5 {
+    font-weight: 400;
+    font-size: 8.4rem;
+    line-height: 1;
 }
