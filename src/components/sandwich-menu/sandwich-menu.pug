@@ -8,7 +8,8 @@ mixin sandwich-menu(args)
                 each menuItem in args
                     li.sandwich-menu__list-item
                         a.sandwich-menu__item(href=menuItem.link ? menuItem.link : '#')!= menuItem.text ? menuItem.text : ''
-                            +svg({name: 'arrow'}).sandwich-menu__item-arrow
+                            .sandwich-menu__item-container
+                                +svg({name: 'arrow'}).sandwich-menu__item-arrow
         .sandwich-menu__footer
             .sandwich-menu__footer-item
                 .sandwich-menu__footer-adress!='Пенза, ул. Аустрина, дом 63, корпус 7'

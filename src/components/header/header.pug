@@ -3,7 +3,7 @@ include ../sandwich-menu/sandwich-menu
 
 
 mixin header(args)
-    header.header.header--top&attributes(attributes)
+    header.header.header--top.arrow-down&attributes(attributes)
         each logoItem in args[0]
             a.header__logo-container(href=logoItem.link ? logoItem.link : '#')
                 +svg({name: 'logoPenz'}).header__logo-svg

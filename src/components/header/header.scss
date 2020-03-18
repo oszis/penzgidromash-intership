@@ -86,14 +86,15 @@
         height: $col-width*0.6125;
         margin-bottom: $col-width*0.5;
         cursor: pointer;
-        transition: opacity .3s;
+        transform: translateY(50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s, transform .5s, visibility .5s;
 
         &-svg{
             width: 100%;
             height: 100%;
         }
-
-        //TODO Поведение стрелки
     }
 }
 
@@ -188,6 +189,23 @@
     }
 }
 
+.arrow-down{
+    .menu__arrow{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.arrow-up{
+    .menu__arrow{
+        transform: translateY(0) rotate(180deg);
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .3s, transform .5s;
+    }
+}
+
 .side-menu--open{
     .header{
         &__logo-svg{
@@ -206,7 +224,8 @@
         background: $main-color;
 
         &__arrow{
-            display: none;
+            opacity: 0;
+            visibility: hidden;
         }
     }
 

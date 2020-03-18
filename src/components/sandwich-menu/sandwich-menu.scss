@@ -39,28 +39,40 @@
         list-style: none;
 
         &-item{
+            display: flex;
             margin-bottom: $col-width*0.75;
         }
     }
 
     &__item {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start;
+        display: inline-block;
         color: $color-1;
         font: 8.4rem Gilroy;
         cursor: pointer;
         min-height: $col-width*0.75;
+        text-transform: lowercase;
+        transition: color .3s;
+
+        &:first-letter{
+            text-transform: uppercase;
+        }
+
+        &-container{
+            width: $col-width;
+            height: $col-width;
+            margin-left: $col-width;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-self: flex-end;
+        }
 
         &-arrow {
             width: $col-width*0.75*0.25;
             height: $col-width*0.75*0.25;
-            margin-left: $col-width;
             transform: rotate(-135deg);
             align-self: flex-end;
             opacity: 0;
-            transition: opacity .2s, width .4s, height .4s;
+            transition: opacity .4s, width .4s, height .4s;
         }
 
         &:hover {
@@ -69,8 +81,9 @@
             .sandwich-menu__item-arrow {
                 width: $col-width;
                 height: $col-width;
-                opacity: 1;
                 stroke: $main-color;
+                opacity: 1;
+                transition: opacity .1s, width .4s, height .4s;
             }
         }
     }
