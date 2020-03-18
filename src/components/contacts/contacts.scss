@@ -21,6 +21,7 @@
     }
 
     &__title {
+        margin-left: $col-width;
         position: relative;
         font-weight: 500;
         font-size: calc(70px + (7000vw - 53760px) / 1152 + 70px + (7000vh - 46690px) / 413);
