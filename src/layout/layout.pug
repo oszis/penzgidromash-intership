@@ -3,6 +3,7 @@ include ../common/pug/helpers
 include ../components/header/header
 include ../components/footer/footer
 include ../components/preloader/preloader
+include ../components/first-screen/first-screen
 
 
 doctype html
@@ -11,7 +12,36 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1')
         meta(charset='utf-8')
     body.preloading
-        +header
+        +header([
+            [
+                {
+                    text: 'пензгидромаш',
+                    link: '#'
+                }
+            ],
+            [
+                {
+                    text: 'компания',
+                    link: '#'
+                },
+                {
+                    text: 'продукты и услуги',
+                    link: '#'
+                },
+                {
+                    text: 'проекты',
+                    link: '#'
+                },
+                {
+                    text: 'новости',
+                    link: '#'
+                },
+                {
+                    text: 'контакты',
+                    link: '#'
+                },
+            ]
+        ])
         block content
         +footer
         +preloader

@@ -16,5 +16,17 @@
   },
   {
     "name": "picture"
+  },
+  {
+    "name": "first-screen"
+  },
+  {
+    "name": "description-block"
+  },
+  {
+    "name": "catalog-item"
+  },
+  {
+    "name": "arrow-link"
   }
 ]
