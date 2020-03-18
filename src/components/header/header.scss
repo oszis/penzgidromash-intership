@@ -57,7 +57,7 @@
         text-transform: uppercase;
         opacity: .5;
         color: $color-5;
-        font: 300 1.4rem /1.6 Gilroy;
+        font: 1.4rem /1.6 Gilroy;
         transition: opacity .3s;
 
         &:hover{
@@ -177,7 +177,7 @@
 .header--contrast {
     .header__logo-svg {
         fill: $color-5;
-        stroke: $color-5;
+        stroke: $main-color;
     }
 }
 
