@@ -53,3 +53,5 @@ $grid-columns: 24 !default;
 $grid-gutter-width: 0 !default;
 //$col-width: calc((100vw - #{$grid-side-offset} * 2) / #{$grid-columns});
 $col-width: 100vw / $grid-columns;
+
+$font-gilroy: Gilroy, sans-serif;

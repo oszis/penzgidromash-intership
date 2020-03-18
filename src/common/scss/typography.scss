@@ -30,3 +30,21 @@
 //.tp_h-1 {}
 //.tp__p-1 {}
 //.tp-link {}
+
+@mixin font-1 {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+@mixin font-2 {
+    font-weight: 300;
+    font-size: 47px;
+    line-height: 1.5;
+}
+
+@mixin font-3 {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.17;
+}

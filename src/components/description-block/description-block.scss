@@ -1,0 +1,22 @@
+.description-block {
+    $root: &;
+    padding: 135px 0;
+    color: $color-1;
+    background-color: $color-5;
+    border-top: 1px solid $color-3;
+    border-bottom: 1px solid $color-3;
+
+    .row {
+        align-items: baseline;
+    }
+
+
+    &__title {
+        @include font-1;
+    }
+
+    &__description {
+        margin-bottom: 65px;
+        @include font-2;
+    }
+}
