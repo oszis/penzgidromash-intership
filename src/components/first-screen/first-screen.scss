@@ -1,3 +1,6 @@
+@import '../../common/scss/colors';
+@import '../../common/scss/variables';
+
 .first-screen {
     $root: &;
     position: relative;
@@ -6,7 +9,8 @@
     overflow: hidden;
     width: $col-width * 23;
     height: 100vh;
-    &__layer-1{
+
+    &__layer-1 {
         position: absolute;
         left: 0;
         top: 0;
@@ -17,7 +21,8 @@
 
         background-color: $first-screen-background-color;
     }
-    &__layer-2{
+
+    &__layer-2 {
         position: absolute;
         left: 0;
         top: 0;
@@ -32,56 +37,56 @@
         box-sizing: border-box;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
-    &__layer-blue{
+
+    &__layer-blue {
         position: absolute;
         left: 0;
         top: 0;
         width: 50%;
         height: 100%;
-
         z-index: 2;
-
         background-color: $main-color;
-        &--title{
-            position: absolute;
-
-            top: 272.5px;
-            left: 65px;
-
-            font-family: Gilroy;
-            font-weight: 500;
-            font-size: 200px;
-            line-height: 0.9;
-
-            color: $color-5;
-        }
-
 
     }
-    &__footer{
-         position: absolute;
-         bottom: 0;
-         width: 100%;
-         z-index: 3;
-        &--line{
-             position: relative;
-             height: 2px;
-             width: 50%;
-             background-color: $color-5;
-         }
-         &--text{
-             position: relative;
 
-             padding: 51px $col-width;
-             font-family: Gilroy;
-             font-weight: normal;
-             font-size: 25px;
-             line-height: 1.5;
+    &__title {
+        display: flex;
+        align-items: center;
+        font-family: Gilroy, serif;
+        font-weight: 500;
+        padding-left: $col-width;
+        font-size: calc(55px + (4500vw - 34560px) / 1152 + 55px + (4500vh - 30015px) / 413);
+        line-height: 0.9;
+        z-index: 5;
+        color: $color-5;
+    }
 
-             color: $color-5;
-         }
-     }
-    &__layer-tank{
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 3;
+
+    }
+    &__footer-line {
+        position: relative;
+        height: 2px;
+        width: 50%;
+        background-color: $color-5;
+    }
+
+    &__footer-text {
+        position: relative;
+
+        padding: 51px $col-width;
+        font-family: Gilroy, serif;
+        font-weight: normal;
+        font-size: calc(7.5px + (500vw - 3840px)/1152 + 7.5px + (500vh - 3335px)/413);
+        line-height: 1.5;
+
+        color: $color-5;
+    }
+    &__layer-tank {
         position: absolute;
         left: 0;
         top: 0;
