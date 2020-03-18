@@ -1,9 +1,9 @@
 import Component from '../../common/js/component';
 import { getDeviceType, listen, unlisten, nFindComponent, Resize } from '../../common/js/helpers';
 
-class FirstScreen extends Component {
+class Contacts extends Component {
     constructor(nRoot) {
-        super(nRoot, 'first-screen');
+        super(nRoot, 'contacts');
         this.currentDevice = getDeviceType();
         this.afterResize = this.afterResize.bind(this);
 
@@ -55,4 +55,4 @@ class FirstScreen extends Component {
     }
 }
 
-export default FirstScreen;
+export default Contacts;
