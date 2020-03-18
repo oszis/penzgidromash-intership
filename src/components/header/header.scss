@@ -167,14 +167,6 @@
 
 /*=== Модификаторы для js ===*/
 
-.header--big-logo{
-    .header__logo-svg{
-        width: $col-width*1.25;
-        height: $col-width*1.25;
-        fill: $main-color;
-        stroke: $color-5;
-    }
-}
 
 .header--top{
     .header__nav-container{
@@ -185,6 +177,15 @@
 .header--contrast {
     .header__logo-svg {
         fill: $color-5;
+        stroke: $color-5;
+    }
+}
+
+.header--big-logo{
+    .header__logo-svg{
+        width: $col-width*1.25;
+        height: $col-width*1.25;
+        fill: $main-color;
         stroke: $color-5;
     }
 }

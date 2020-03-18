@@ -64,7 +64,7 @@ class Header extends Component {
                     header.classList.remove('arrow-up');
                     header.classList.add('arrow-down');
                 }
-                if (window.pageYOffset >= document.body.scrollHeight - windowHeight) {
+                if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.2) {
                     header.classList.add('arrow-up');
                     header.classList.remove('arrow-down');
                 }
