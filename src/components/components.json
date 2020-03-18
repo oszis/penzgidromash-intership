@@ -16,5 +16,29 @@
   },
   {
     "name": "picture"
+  },
+  {
+    "name": "link-to-section"
+  },
+  {
+    "name": "index-slider"
+  },
+  {
+    "name": "page-lead-2"
+  },
+  {
+    "name": "arrow-link"
+  },
+  {
+    "name": "category-card"
+  },
+  {
+    "name": "project-slider"
+  },
+  {
+    "name": "equipment-slider"
+  },
+  {
+    "name": "section-title"
   }
 ]

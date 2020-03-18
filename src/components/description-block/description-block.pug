@@ -1,0 +1,13 @@
+include ../../components/arrow-link/arrow-link
+
+mixin description-block(args)
+    .description-block&attributes(attributes)
+        .row
+            .col-6.offset-1
+                h2.description-block__title!= args.title
+            .col-15.offset-1
+                p.description-block__description!= args.description
+                +arrow-link({
+                    text: args.link.text,
+                    href: args.link.href
+                })

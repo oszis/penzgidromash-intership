@@ -1,5 +1,18 @@
 extends ../../layout/layout
+include ../../components/description-block/description-block
+include ../../components/index-slider/index-slider
 
 block content
     main#barba-wrapper
         .barba-container(data-namespace='index')
+            .row
+                .col-24.col-xl-23
+                    +description-block({
+                        title: 'Проекты',
+                        description: 'Помогаем решать задачи вовремя<br>и на профессиональном уровне',
+                        link: {
+                            text: 'Перейти в проекты',
+                            href: '/projects.html'
+                        }
+                    })
+            +index-slider

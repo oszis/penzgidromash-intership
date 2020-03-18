@@ -1,3 +1,11 @@
-.index {
-    
+@font-face {
+    font-family:'Gilroy';
+    src: url('../../fonts/Gilroy-Regular.woff') format('woff'),
+    url('../../fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+*, :after, :before {
+    box-sizing: border-box;
 }

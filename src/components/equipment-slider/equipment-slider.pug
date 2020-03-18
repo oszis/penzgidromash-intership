@@ -1,0 +1,34 @@
+mixin equipment-slider(args)
+    .equipment-slider&attributes(attributes)
+        .equipment-slider__nav
+            .slider-navigation.slider-navigation_equipment
+                .slider-navigation__counter
+                    .slider-navigation__current 01
+                    .slider-navigation__separator /
+                    .slider-navigation__total 05
+                .slider-navigation__title Галерея
+                .d-flex.align-items-center.slider-navigation__arrows.slider-navigation__arrows-equipment
+                    .slider-navigation__arrow.slider-navigation__prev.swiper-button-disabled(tabindex='0' role='button' aria-label='Previous slide' aria-disabled='true')
+                        .slider-navigation__arrow-svg
+                            +svg({ name: 'arrow' })
+                    .slider-navigation__arrow.slider-navigation__next.focused(tabindex='0' role='button' aria-label='Next slide' aria-disabled='false')
+                        .slider-navigation__arrow-svg
+                            +svg({ name: 'arrow' })
+        .equipment-slider__container
+            .slider-pair.swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-autoheight
+                .swiper-wrapper
+                    .slider-pair__slide.swiper-slide.swiper-slide-active
+                        .slide
+                            .slide__container
+                                .slide__box
+                                .slide__background
+                                    picture.picture.picture_cover.slide__img
+                                        +img({ path: '../../common/images/equipment1.png' })
+                    .slider-pair__slide.swiper-slide.swiper-slide-next
+                        .slide
+                            .slide__container
+                                .slide__box
+                                .slide__background
+                                    picture.picture.picture_cover.slide__img
+                                        +img({ path: '../../common/images/equipment2.png' })
+                span.swiper-notification(aria-live='assertive' aria-atomic='true')

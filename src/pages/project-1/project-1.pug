@@ -1,0 +1,11 @@
+extends ../../layout/layout
+include ../../components/project-slider/project-slider
+include ../../components/equipment-slider/equipment-slider
+
+block content
+    main#barba-wrapper
+        .barba-container(data-namespace='project-1')
+            .col-xl-22.offset-xl-1
+                +project-slider
+            .col-xl-22.offset-xl-1
+                +equipment-slider

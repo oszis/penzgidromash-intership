@@ -1,0 +1,13 @@
+mixin page-lead-2(args)
+    .page-lead-2&attributes(attributes)
+        .page-lead-2__content
+            .page-lead-2__content-offset
+                .breadcrumbs.breadcrumbs__contrast.page-lead-2__breadcrumbs
+                    a(href=args.mainLink).breadcrumbs__link=args.name
+                    .breadcrumbs__icon
+                        span
+                    a(href=args.pageLink).breadcrumbs__link=args.subName
+                    .breadcrumbs__icon
+                        span
+                .page-lead-2__content-title=args.title
+                .page-lead-2__content-tagline=args.descr
