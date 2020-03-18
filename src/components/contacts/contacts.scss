@@ -1,0 +1,98 @@
+@import '../../common/scss/colors';
+@import '../../common/scss/variables';
+
+.contacts {
+    $root: &;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width: $col-width * 23;
+    font-family: $font-gilroy;
+    padding: 100px $col-width;
+
+    &__info {
+        width: $col-width * 10;
+        position: relative;
+        font-weight: 300;
+        font-size: calc(8px + (450vw - 3456px) / 1152 + 8px + (450vh - 3001.5px) / 413);
+        line-height: 1.6;
+        color: $color-1;
+    }
+
+    &__title {
+        position: relative;
+        font-weight: 500;
+        font-size: calc(70px + (7000vw - 53760px) / 1152 + 70px + (7000vh - 46690px) / 413);
+        line-height: .9;
+
+        color: $color-1;
+    }
+
+    &__reqest {
+        margin-bottom: 222px;
+    }
+
+    &__all {
+    }
+
+    p {
+        margin-bottom: 44px;
+    }
+
+    &__line {
+        height: 1px;
+        width: 100%;
+        background-color: $color-1;
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 19px;
+        cursor: pointer;
+        font-size: 47px;
+        line-height: 1.5;
+    }
+
+    &__arrowbox {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        margin-top: 11px;
+        margin-right: 11px;
+        overflow: hidden;
+    }
+
+    &__arrow {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        width: 46px;
+        height: 46px;
+        transition: top .4s, left .4s;
+    }
+
+    &__arrow--hover {
+        position: absolute;
+        object-fit: cover;
+        top: 56px;
+        left: -56px;
+        width: 46px;
+        height: 46px;
+        transition: top .4s, left .4s;
+    }
+
+    &__link:hover &__arrow {
+        top: -56px;
+        left: 56px
+    }
+
+    &__link:hover &__arrow--hover {
+        top: 0;
+        left: 0;
+    }
+}
+
