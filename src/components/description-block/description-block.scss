@@ -12,11 +12,12 @@
 
 
     &__title {
-        @include font-1;
+        @include font-3-desktop;
+        line-height: 1.5;
     }
 
     &__description {
         margin-bottom: 65px;
-        @include font-2;
+        @include font-4-desktop;
     }
 }

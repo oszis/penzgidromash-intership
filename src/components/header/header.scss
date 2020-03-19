@@ -36,7 +36,8 @@
         justify-content: flex-start;
         align-items: center;
         margin-left: $col-width*0.25;
-        font: 1.4rem Gilroy;
+        @include font-1-desktop;
+        //font: 1.4rem Gilroy;
         letter-spacing: 0.1em;
         text-transform: uppercase;
 
@@ -58,12 +59,17 @@
         opacity: .5;
         color: $color-5;
         //font: 1.4rem Gilroy;
-        @include font-4;
+        @include font-1-desktop;
+        letter-spacing: 0.1em;
         transition: opacity .3s;
 
-        &:hover{
+        &:hover, &:active{
             color: $color-5;
             opacity: 1;
+        }
+
+        &:visited{
+            color: $color-5;
         }
     }
 }
@@ -140,8 +146,8 @@
             text-transform: uppercase;
             color: $color-1;
             transform: rotate(90deg);
+            @include font-1-desktop;
             //font: 1.4rem /1.6 Gilroy;
-            @include font-4;
             letter-spacing: 0.1em;
             transition: opacity .3s;
 

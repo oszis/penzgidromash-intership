@@ -8,25 +8,26 @@
     justify-content: space-between;
     overflow: hidden;
     width: $col-width * 23;
-    font-family: $font-gilroy;
+    //font-family: $font-gilroy;
     padding: 100px $col-width;
 
     &__info {
         width: $col-width * 10;
         position: relative;
-        font-weight: 400;
-        font-size: calc(8px + (450vw - 3456px) / 1152 + 8px + (450vh - 3001.5px) / 413);
-        line-height: 1.6;
+        @include font-3-desktop;
+        //font-weight: 400;
+        //font-size: calc(8px + (450vw - 3456px) / 1152 + 8px + (450vh - 3001.5px) / 413);
+        //line-height: 1.6;
         color: $color-1;
     }
 
     &__title {
         margin-left: $col-width;
         position: relative;
-        font-weight: 500;
-        font-size: calc(70px + (7000vw - 53760px) / 1152 + 70px + (7000vh - 46690px) / 413);
-        line-height: .9;
-
+        @include font-7-desktop;
+        //font-weight: 500;
+        //font-size: calc(70px + (7000vw - 53760px) / 1152 + 70px + (7000vh - 46690px) / 413);
+        //line-height: .9;
         color: $color-1;
     }
 
@@ -53,8 +54,9 @@
         justify-content: space-between;
         padding-top: 19px;
         cursor: pointer;
-        font-size: 47px;
-        line-height: 1.5;
+        @include font-4-desktop;
+        //font-size: 47px;
+        //line-height: 1.5;
     }
 
     &__arrowbox {

@@ -8,18 +8,19 @@
     justify-content: space-between;
     width: $col-width * 23;
     padding: 44px $col-width;
-    font-size: 14px;
-    line-height: 1.6;
+    @include font-1-desktop;
+    //font-size: 14px;
+    //line-height: 1.6;
     border-top: 1px solid $color-5;
 
     &__copyright {
-        font-family: Gilroy, serif;
-        font-weight: 400;
+        //font-family: Gilroy, serif;
+        //font-weight: 400;
     }
 
     &__design {
-        font-family: Gilroy, serif;
-        font-weight: 400;
+        //font-family: Gilroy, serif;
+        //font-weight: 400;
     }
 
     &__only {

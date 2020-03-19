@@ -1,8 +1,8 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
 * {
-    font-family: Gilroy, sans-serif;
-    font-weight: 400;
+    //font-family: Gilroy, sans-serif;
+    //font-weight: 400;
 }
 a, a:active, a:hover, a:visited {
     text-decoration: none;
@@ -46,7 +46,8 @@ a, a:active, a:hover, a:visited {
     color: $color-5;
 }
 .title-slide__year {
-    font-size: 25px;
+    @include font-3-desktop;
+    //font-size: 25px;
     line-height: 1.9;
     color: $black;
 }
@@ -56,16 +57,18 @@ a, a:active, a:hover, a:visited {
 .title-slide__name {
     display: inline-block;
     margin-bottom: 35px;
-    font-size: 3.5rem;
-    line-height: 1.5;
+    @include font-4-desktop;
+    //font-size: 3.5rem;
+    //line-height: 1.5;
     color: $black;
 }
 
 .title-slide__owner {
     position: relative;
     margin-bottom: 5px;
-    font-size: 25px;
-    line-height: 1.6;
+    @include font-3-desktop;
+    //font-size: 25px;
+    //line-height: 1.6;
     color: $black;
     transition: color .3s linear;
     padding-left: 80px;

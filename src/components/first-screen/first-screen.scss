@@ -52,11 +52,12 @@
     &__title {
         display: flex;
         align-items: center;
-        font-family: Gilroy, serif;
-        font-weight: 500;
+        @include font-7-desktop;
+        //font-family: Gilroy, serif;
+        //font-weight: 500;
+        //font-size: calc(55px + (4500vw - 34560px) / 1152 + 55px + (4500vh - 30015px) / 413);
+        //line-height: 0.9;
         padding-left: $col-width;
-        font-size: calc(55px + (4500vw - 34560px) / 1152 + 55px + (4500vh - 30015px) / 413);
-        line-height: 0.9;
         z-index: 5;
         color: $color-5;
     }
@@ -79,11 +80,11 @@
         position: relative;
 
         padding: 51px $col-width;
-        font-family: Gilroy, serif;
-        font-weight: normal;
-        font-size: calc(7.5px + (500vw - 3840px)/1152 + 7.5px + (500vh - 3335px)/413);
+        @include font-3-desktop;
+        //font-family: Gilroy, serif;
+        //font-weight: normal;
+        //font-size: calc(7.5px + (500vw - 3840px)/1152 + 7.5px + (500vh - 3335px)/413);
         line-height: 1.5;
-
         color: $color-5;
     }
     &__layer-tank {

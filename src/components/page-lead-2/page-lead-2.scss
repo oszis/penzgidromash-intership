@@ -1,8 +1,8 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
 * {
-    font-family: Gilroy, sans-serif;
-    font-weight: 400;
+    //font-family: Gilroy, sans-serif;
+    //font-weight: 400;
 }
 .page-lead-2 {
     $root: &;
@@ -21,15 +21,17 @@
         padding-left: 4vw;
     }
     &__content-title {
+        @include font-5-desktop;
+        //font-size: 84px;
+        //line-height: 1;
         font-weight: 500;
-        font-size: 84px;
-        line-height: 1;
         width: 66vw;
     }
     &__content-tagline {
         margin-top: 45px;
-        font-size: 25px;
-        line-height: 1.6;
+        @include font-3-desktop;
+        //font-size: 25px;
+        //line-height: 1.6;
         width: 45vw;
         color: $black;
     }
@@ -42,8 +44,9 @@
     flex-wrap: wrap;
     align-items: center;
     &__link {
-        font-weight: 300;
-        font-size: 14px;
+        @include font-1-desktop;
+        //font-weight: 300;
+        //font-size: 14px;
         color: ($black, .5);
         transition: color .3s;
         cursor: pointer;

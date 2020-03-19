@@ -48,7 +48,7 @@
         display: inline-block;
         color: $color-1;
         //font: 8.4rem Gilroy;
-        @include font-5;
+        @include font-5-desktop;
         cursor: pointer;
         min-height: $col-width*0.75;
         text-transform: lowercase;
@@ -109,7 +109,7 @@
             justify-content: space-between;
             width: $col-width*6;
             color: $color-1;
-            @include font-3;
+            @include font-2-desktop;
             //font: 1.8rem /1.8 Gilroy;
         }
 

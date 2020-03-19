@@ -4,7 +4,7 @@
         display: inline-block;
         position: relative;
         margin-right: 9px;
-        @include font-3;
+        @include font-2-desktop;
         color: $color-1;
 
         &::before {
