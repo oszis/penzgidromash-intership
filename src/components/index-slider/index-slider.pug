@@ -1,0 +1,85 @@
+mixin index-slider(args)
+    .index-slider&attributes(attributes)
+        .container-fluid
+            .row
+                .col-6
+                    .title-slider.index-slider__text-slider
+                        .swiper-container.title-slider__slider.swiper-container-initialized.swiper-container-horizontal
+                            .swiper-wrapper
+                                .title-slider__slide.swiper-slide.swiper-slide-active
+                                    .title-slide
+                                        .title-slide__year 2018
+                                        .title-slide__content
+                                            a.title-slide__name(href='/project-1.html')
+                                                | Ванковское
+                                                | месторождение
+                                            .title-slide__owner ПАО «Газпром»
+                                .title-slider__slide.swiper-slide.swiper-slide-next
+                                    .title-slide
+                                        .title-slide__year 2019
+                                        .title-slide__content
+                                            a.title-slide__name(href='/project-2.html')
+                                                | Чаядинское
+                                                | месторождение
+                                            .title-slide__owner ПАО «Газпром»
+                                .title-slider__slide.swiper-slide.swiper-slide-next
+                                    .title-slide
+                                        .title-slide__year 2018
+                                        .title-slide__content
+                                            a.title-slide__name(href='/project-3.html')
+                                                | ЛУКОЙЛ - Нижегород
+                                                | нефтеоргсинтез,
+                                                | г.Кстово
+                                            .title-slide__owner ПАО «ЛУКОЙЛ»
+                                .title-slider__slide.swiper-slide.swiper-slide-next
+                                    .title-slide
+                                        .title-slide__year 2017
+                                        .title-slide__content
+                                            a.title-slide__name(href='/project-4.html')
+                                                | Ванковское
+                                                | месторождение
+                                            .title-slide__owner ПАО «НК «Роснефть»
+                                span.swiper-notification
+                        .slider-navigation.slider-navigation_no-counter.title-slider__navigation
+                            .slider-navigation__counter
+                                .slider-navigation__current 01
+                                .slider-navigation__separator /
+                                .slider-navigation__total
+                            .d-flex.align-items-center.slider-navigation__arrows
+                                .slider-navigation__arrow.slider-navigation__prev.swiper-button-disabled(tabindex='0', role='button', aria-label='Previous slide', aria-disabled='true')
+                                    +svg({ name: 'arrow' })
+                                .slider-navigation__arrow.slider-navigation__next.focused(tabindex='0', role='button', aria-label='Next slide', aria-disabled='false')
+                                    +svg({ name: 'arrow' })
+                .col-17.offset-1
+                    .index-slider__swiper
+                        .slider-pair.swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-autoheight(style='cursor: grab;')
+                            .swiper-wrapper
+                                .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-active
+                                    .slide
+                                        .slide__container
+                                            .slide__box
+                                            .slide__background
+                                                picture.picture.picture_cover.slide__img
+                                                    +img({ path: '../../common/images/slider1.png' })
+                                .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-next
+                                    .slide
+                                        .slide__container
+                                            .slide__box
+                                            .slide__background
+                                                picture.picture.picture_cover.slide__img
+                                                    +img({ path: '../../common/images/slider2.png' })
+                                .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-next
+                                    .slide
+                                        .slide__container
+                                            .slide__box
+                                            .slide__background
+                                                picture.picture.picture_cover.slide__img
+                                                    +img({ path: '../../common/images/slider3.png' })
+                                .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-next
+                                    .slide
+                                        .slide__container
+                                            .slide__box
+                                            .slide__background
+                                                picture.picture.picture_cover.slide__img
+                                                    +img({ path: '../../common/images/slider4.png' })
+                                span.swiper-notification(aria-live='assertive', aria-atomic='true')

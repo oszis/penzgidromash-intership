@@ -1,0 +1,55 @@
+extends ../../layout/layout
+include ../../components/page-lead-2/page-lead-2
+include ../../components/category-card/category-card
+
+block content
+    main#barba-wrapper
+        .barba-container(data-namespace='projects')
+            +page-lead-2({
+                mainLink: '/',
+                name: 'Главная',
+                pageLink: '/projects.html',
+                subName: 'Проекты',
+                title: 'Проекты',
+                descr: 'Емкостное и газовое оборудование для газовой и химической промышленности',
+            })
+            .category__list
+                .container-fluid
+                    .row
+                        .col-23
+                            +category-card({
+                                links:'/project-1.html',
+                                title:'Ванковское месторождение',
+                                company:'ПАО «Газпром»',
+                                link: {
+                                    text:'Смотреть',
+                                },
+                                image:'../../common/images/slider1.png',
+                            })
+                            +category-card({
+                                links: '/project-2.html',
+                                title: 'Чаядинское месторождение',
+                                company: 'ПАО «Газпром»',
+                                link: {
+                                    text: 'Смотреть',
+                                },
+                                image: '../../common/images/slider2.png',
+                            })
+                            +category-card({
+                                links: '/project-3.html',
+                                title: 'ЛУКОЙЛ - Нижегороднефтеорг синтез, г.Кстово',
+                                company: 'ПАО «ЛУКОЙЛ»',
+                                link: {
+                                    text: 'Смотреть',
+                                },
+                                image: '../../common/images/slider3.png',
+                            })
+                            +category-card({
+                                links: '/project-4.html',
+                                title: 'Ванковское месторождение',
+                                company: 'ПАО «НК«Роснефть»',
+                                link: {
+                                    text: 'Смотреть',
+                                },
+                                image: '../../common/images/slider4.png',
+                            })

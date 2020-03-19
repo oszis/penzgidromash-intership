@@ -1,0 +1,18 @@
+include ../arrow-link/arrow-link
+
+mixin category-card(args)
+    a(href=args.links).category-card&attributes(attributes)
+        .category-card__content
+            .category-card__content-title=args.title
+            .category-card__content-company=args.company
+            .arrow-link-card
+                .arrow-link-card__text Смотреть
+                .arrow-link-card__arrow
+                    +svg({ name: 'arrow-link' })
+            .category-card__arrow
+                .category-card__arrow_inner
+                    +svg({ name: 'arrow_big' })
+        .category-card__image
+            .category-card__image-wrapper
+                img(src=args.image alt='')
+

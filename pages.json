@@ -6,5 +6,9 @@
   {
     "name": "tests",
     "title": "Тестирование"
+  },
+  {
+    "name": "projects",
+    "title": "projects"
   }
 ]

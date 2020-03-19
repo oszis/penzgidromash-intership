@@ -1,0 +1,31 @@
+include ../section-title/section-title
+mixin project-slider(args)
+    .project-slider&attributes(attributes)
+        +section-title({ title: 'Оборудование'}).project-slider__title
+        .slider-navigation.project-slider__navigation
+            .slider-navigation__counter.slider-navigation__counter-project
+                .slider-navigation__current 01
+                .slider-navigation__separator /
+                .slider-navigation__total 05
+            .d-flex.align-items-center.slider-navigation__arrows
+                .slider-navigation__arrow.slider-navigation__prev-project.swiper-button-disabled(aria-disabled='true')
+                    .slider-navigation__arrow-svg
+                        +svg({ name: 'arrow' })
+                .slider-navigation__arrow.slider-navigation__next-project.focused(aria-disabled='false')
+                    .slider-navigation__arrow-svg
+                        +svg({ name: 'arrow' })
+        .project-slider__bottom
+            .swiper-container.project-slider__container.swiper-container-initialized.swiper-container-horizontal
+                .swiper-wrapper.project-slider__wrapper
+                    .swiper-slide.project-slider__slide.swiper-slide-active
+                        .project-slider__slide-title Трубный газовый расширитель ТГР-400
+                    .swiper-slide.project-slider__slide.swiper-slide-next
+                        .project-slider__slide-title Трубный газовый расширитель ТГР-600
+                    .swiper-slide.project-slider__slide
+                        .project-slider__slide-title Сепаратор НГС ||-4,0-1600
+                    .swiper-slide.project-slider__slide
+                        .project-slider__slide-title Сепаратор НГС ||-4,0-1600
+                    .swiper-slide.project-slider__slide
+                        .project-slider__slide-title Сепаратор НГС ||-4,0-1600
+                span.swiper-notification(aria-live='assertive' aria-atomic='true')
+
