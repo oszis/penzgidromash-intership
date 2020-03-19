@@ -1,6 +1,7 @@
 extends ../../layout/layout
 include ../../components/catalog-item/catalog-item
 include ../../components/description-block/description-block
+include ../../components/index-slider/index-slider
 
 block content
     main#barba-wrapper
@@ -25,4 +26,15 @@ block content
                                         imgPath: item.imgPath,
                                         linkPath: item.linkPath
                                 })
+            .row
+                .col-24.col-xl-23
+                    +description-block({
+                        title: 'Проекты',
+                        description: 'Помогаем решать задачи вовремя<br>и на профессиональном уровне',
+                        link: {
+                            text: 'Перейти в проекты',
+                            href: '/projects.html'
+                        }
+                    })
+            +index-slider
             +contacts
