@@ -2,60 +2,60 @@
 
 /* === font-size: 14px === */
 
-@mixin font-1-desktop {
-    font-weight: 400;
+@mixin font-1-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.4rem;
     line-height: 1.6;
 }
 
-@mixin font-1-tablet {
-    font-weight: 400;
+@mixin font-1-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.4rem;
     line-height: 1.6;
 }
 
-@mixin font-1-mobile {
-    font-weight: 400;
+@mixin font-1-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.2rem;
     line-height: 1.6;
 }
 
 /* === font-size: 18px === */
 
-@mixin font-2-desktop {
-    font-weight: 400;
+@mixin font-2-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.8rem;
     line-height: 1.8;
 }
 
-@mixin font-2-tablet {
-    font-weight: 400;
+@mixin font-2-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.8rem;
     line-height: 1.8;
 }
 
-@mixin font-2-mobile {
-    font-weight: 400;
+@mixin font-2-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.6rem;
     line-height: 1.6;
 }
 
 /* === font-size: 25px === */
 
-@mixin font-3-desktop {
-    font-weight: 400;
+@mixin font-3-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 2.5rem;
     line-height: 1.6;
 }
 
-@mixin font-3-tablet {
-    font-weight: 400;
+@mixin font-3-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 2.0rem;
     line-height: 1.8;
 }
 
-@mixin font-3-mobile {
-    font-weight: 400;
+@mixin font-3-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 1.6rem;
     line-height: 1.6;
 }
@@ -63,80 +63,80 @@
 
 /* === font-size: 47px === */
 
-@mixin font-4-desktop {
-    font-weight: 400;
+@mixin font-4-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 4.7rem;
     line-height: 1.5;
 }
 
-@mixin font-4-tablet {
-    font-weight: 400;
+@mixin font-4-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 3.6rem;
     line-height: 1.6;
 }
 
-@mixin font-4-mobile {
-    font-weight: 400;
+@mixin font-4-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 2.5rem;
     line-height: 1.5;
 }
 
 /* === font-size: 84px === */
 
-@mixin font-5-desktop {
-    font-weight: 400;
+@mixin font-5-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 8.4rem;
     line-height: 1;
 }
 
-@mixin font-5-tablet {
-    font-weight: 400;
+@mixin font-5-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 5rem;
     line-height: 1.2;
 }
 
-@mixin font-5-mobile {
-    font-weight: 400;
+@mixin font-5-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 4rem;
     line-height: 1.2;
 }
 
 /* === font-size: 160px === */
 
-@mixin font-6-desktop {
-    font-weight: 400;
+@mixin font-6-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 16rem;
     line-height: 1;
 }
 
-@mixin font-6-tablet {
-    font-weight: 400;
+@mixin font-6-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 9.4rem;
     line-height: 1.2;
 }
 
-@mixin font-6-mobile {
-    font-weight: 400;
+@mixin font-6-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 7rem;
     line-height: 1.2;
 }
 
 /* === font-size: 200px === */
 
-@mixin font-7-desktop {
-    font-weight: 400;
+@mixin font-7-desktop ($weight: 300) {
+    font-weight: $weight;
     font-size: 20rem;
     line-height: 0.9;
 }
 
-@mixin font-7-tablet {
-    font-weight: 400;
+@mixin font-7-tablet ($weight: 300) {
+    font-weight: $weight;
     font-size: 15.4rem;
     line-height: 0.9;
 }
 
-@mixin font-7-mobile {
-    font-weight: 400;
+@mixin font-7-mobile ($weight: 300) {
+    font-weight: $weight;
     font-size: 9.6rem;
     line-height: 0.9;
 }
