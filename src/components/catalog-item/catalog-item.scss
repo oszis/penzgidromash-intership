@@ -41,6 +41,7 @@
         width: 510px;
         @include font-4-desktop;
         color: $color-1;
+        transition: color .5s;
     }
 
     &__arrow {

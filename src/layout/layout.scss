@@ -83,7 +83,7 @@ body {
     height: 100%;
     overflow-y: scroll;
     position: relative;
-    transition: all 1s;
+    transition: background-color .5s;
 
     &.preloading {
         position: fixed;

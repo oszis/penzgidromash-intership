@@ -14,6 +14,7 @@ a, a:active, a:hover, a:visited {
     position: relative;
     z-index: 2;
     background-color: $color-5;
+    transition: background-color .5s;
 }
 .title-slider {
     display: flex;
@@ -50,6 +51,7 @@ a, a:active, a:hover, a:visited {
     //font-size: 25px;
     line-height: 1.9;
     color: $black;
+    transition: color .5s;
 }
 .title-slide__content {
     margin: auto 0;
@@ -61,6 +63,7 @@ a, a:active, a:hover, a:visited {
     //font-size: 3.5rem;
     //line-height: 1.5;
     color: $black;
+    transition: color .5s;
 }
 
 .title-slide__owner {
@@ -171,8 +174,9 @@ a, a:active, a:hover, a:visited {
         height: 34px;
         margin-top: -17px;
         transform-origin: center;
-        transition: fill .3s linear;
+        transition: fill .3s linear, stroke .5s;
         fill: $black;
+        stroke: $color-1;
     }
 }
 
@@ -185,7 +189,7 @@ a, a:active, a:hover, a:visited {
     height: 1px;
     background-color: $black;
     transform: translateY(-50%) scalex(.35);
-    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, background-color .5s;
 }
 .main-page .slider-navigation__arrow:before {
     transition: background-color .3s linear;

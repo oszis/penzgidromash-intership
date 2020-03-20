@@ -113,9 +113,12 @@
         width: 12px;
         height: 24px ;
         margin-top: 0;
+        stroke: $color-1;
+        transition: stroke .5s;
     }
     .slider-navigation__arrow:before {
         top: 30px;
+        transition: background-color .5s;
     }
     .project-slider__bottom {
         order: 3;

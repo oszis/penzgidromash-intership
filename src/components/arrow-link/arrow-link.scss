@@ -34,6 +34,8 @@
         display: inline-block;
         vertical-align: top;
         position: relative;
+        //stroke: $color-1;
+        transition: stroke .5s;
 
         &::before {
             content: '';

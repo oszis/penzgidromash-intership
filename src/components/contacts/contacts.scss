@@ -29,13 +29,16 @@
         //font-size: calc(70px + (7000vw - 53760px) / 1152 + 70px + (7000vh - 46690px) / 413);
         //line-height: .9;
         color: $color-1;
+        transition: color .5s;
     }
 
     &__reqest {
         margin-bottom: 222px;
+        transition: color .5s;
     }
 
     &__all {
+        transition: color .5s;
     }
 
     p {
@@ -46,6 +49,7 @@
         height: 1px;
         width: 100%;
         background-color: $color-1;
+        transition: background-color .5s;
     }
 
     &__link {
@@ -75,7 +79,8 @@
         left: 0;
         width: 46px;
         height: 46px;
-        transition: top .4s, left .4s;
+        stroke: $color-1;
+        transition: top .4s, left .4s, stroke .5s;
     }
 
     &__arrow--hover {
@@ -85,7 +90,8 @@
         left: -56px;
         width: 46px;
         height: 46px;
-        transition: top .4s, left .4s;
+        stroke: $color-1;
+        transition: top .4s, left .4s, stroke .5s;
     }
 
     &__link:hover &__arrow {
