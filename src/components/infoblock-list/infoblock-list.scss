@@ -1,0 +1,26 @@
+
+.infoblock-list {
+    display: flex;
+    flex-direction: column;
+
+    > h3 {
+        @include font-4-desktop;
+    }
+
+    &__wrapper {
+        margin-top: 2.8vw;  // 52px
+        @include font-3-desktop(normal);
+    }
+    
+    &__item {
+        // height: 101px;
+        padding: 30px 0;
+        border-bottom: 1px solid;
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+            border-top: 1px solid;
+        }
+    }
+}

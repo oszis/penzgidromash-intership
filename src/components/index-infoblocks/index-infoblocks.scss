@@ -1,0 +1,165 @@
+.index-infoblocks {
+    border: 0.01px transparent;  // на всякий случай
+}
+
+.info {
+    padding: 0;
+    padding-top: 136px;
+    border: 0.01px transparent;  // на всякий случай
+    color: $color-1;
+    font-family: $font-gilroy;
+
+    // главный title
+    &__title {
+        @include font-3-desktop(400);
+        // font-size: 2.5rem;
+        // font-weight: 400;
+        line-height: 1.5;
+        padding-top: 23px;
+    }
+
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        opacity: .95 !important;
+    }
+
+    &block-1 {
+
+        &__img {
+            margin-top: 54px;
+            margin-left: -$col-width;  //сдвигает картинку к краю из-за offset-1
+        }
+
+        &__info-title {
+            @include font-4-desktop(400);
+        }
+
+        &__subtitle {
+            margin-top: 4.27vw;
+            padding-right: 50px;
+            @include font-3-desktop;
+        }
+
+        &__line-1 {
+            margin-top: 103px !important;
+        }
+    }
+
+    &block-2 {
+        margin-top: 90px;
+
+        &__info-title {
+            @include font-4-desktop;
+            margin-bottom: 50px;
+        }
+
+        .info-line__text {
+            padding: 0 $col-width;
+        }
+
+        .infoblock-line {
+            min-width: 900px;
+        }
+    }
+
+    &block-3 {
+        margin-top: 5.83vw;
+
+        &__wrapper {
+            display: flex;
+            margin-top: 21.88vw;  // 420px
+        }
+
+        &__info-title {
+            @include font-4-desktop;
+            width: $col-width * 5;
+        }
+
+        &__subtitle {
+            width: $col-width * 5;  // или 6, чтобы было как в макете
+            margin-top: 5px;
+            
+            @include font-2-desktop;
+        }
+
+        .infoblock-line {
+            margin-top: 37px;
+        }
+
+        .infoblock-list {
+            margin-top: 12.5vw;
+        }
+    }
+
+    &block-4 {
+        margin-top: 9.38vw;
+
+        &__item-1 {
+            margin-top: -20px;
+        }
+
+        &__item-2 {
+            margin-top: 12.5vw;
+        }
+
+        &__item-3 {
+            margin-top: 12.4vw;
+        }
+    }
+
+    &block-5 {
+        margin-top: 12vw;
+        margin-left: 1.15vw;
+    }
+
+    &-mobile {
+        margin: 80px 60px 0;
+        @include font-3-tablet(400);
+        @media screen and ( max-width: 768px) {
+            @include font-2-mobile(400);
+            margin: 116px 30px 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            @media screen and ( max-width: 768px) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &__title {
+            margin-top: 41px;
+            @include font-4-tablet(400);
+            @media screen and ( max-width: 768px) {
+                @include font-4-mobile;
+                margin-top: 30px;
+            }
+        }
+
+        &__desc {
+            margin-top: 55px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid $color-3;
+            @media screen and ( max-width: 768px) {
+                margin-top: 35px;
+                padding-bottom: 30px;
+            }
+
+            > span {
+                color: $main-color;
+            }
+        }
+
+        .mobile__list {
+            list-style-type: '—';
+            padding-left: 15px;
+            > li {
+                margin: 40px 0;
+                @media screen and ( max-width: 768px) {
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+}

@@ -103,7 +103,7 @@
 
 /* === font-size: 160px === */
 
-@mixin font-6-desktop ($weight: 300) {
+@mixin font-6-desktop ($weight: normal) {
     font-weight: $weight;
     font-size: 16rem;
     line-height: 1;
@@ -123,19 +123,19 @@
 
 /* === font-size: 200px === */
 
-@mixin font-7-desktop ($weight: 300) {
+@mixin font-7-desktop ($weight: 500) {
     font-weight: $weight;
     font-size: 20rem;
     line-height: 0.9;
 }
 
-@mixin font-7-tablet ($weight: 300) {
+@mixin font-7-tablet ($weight: 500) {
     font-weight: $weight;
     font-size: 15.4rem;
     line-height: 0.9;
 }
 
-@mixin font-7-mobile ($weight: 300) {
+@mixin font-7-mobile ($weight: 500) {
     font-weight: $weight;
     font-size: 9.6rem;
     line-height: 0.9;

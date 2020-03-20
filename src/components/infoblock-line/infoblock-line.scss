@@ -1,0 +1,34 @@
+
+.infoblock-line {
+    height: 195px;
+    min-width: 540px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -1px;  // чтобы border'ы не накладывались)
+
+    &__num {
+        width: $col-width * 5;
+        @include font-6-desktop;
+        color: $main-color;
+
+        sub {
+            bottom: 0;
+            @include font-3-desktop(700);
+        }
+    }
+
+    &__text {
+        width: $col-width * 5;
+        margin: 0 2.6vw;
+        // padding: 0 1.5vw;
+        // падингами добиться чтобы элементы стояли ровно
+        @include font-3-desktop;
+    }
+    
+    &__big {
+        width: $col-width * 8;
+    }
+}

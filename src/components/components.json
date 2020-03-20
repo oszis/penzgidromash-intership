@@ -52,5 +52,20 @@
   },
   {
     "name": "section-title"
+  },
+  {
+    "name": "infoblock-line"
+  },
+  {
+    "name": "infoblock-list"
+  },
+  {
+    "name": "index-infoblocks"
+  },
+  {
+    "name": "mobile-button"
+  },
+  {
+    "name": "mobile-list"
   }
 ]
