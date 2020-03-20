@@ -1,0 +1,12 @@
+mixin infoblock-line(args, isBig=false)
+    .infoblock-line&attributes(attributes)
+        if isBig
+            .infoblock-line__num.infoblock-line__big
+                span!= args.num
+            .infoblock-line__text
+                p!= args.text
+        else
+            .infoblock-line__num
+                span!= args.num
+            .infoblock-line__text
+                p!= args.text

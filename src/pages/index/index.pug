@@ -2,11 +2,13 @@ extends ../../layout/layout
 include ../../components/catalog-item/catalog-item
 include ../../components/description-block/description-block
 include ../../components/index-slider/index-slider
+include ../../components/index-infoblocks/index-infoblocks
 
 block content
     main#barba-wrapper
         .barba-container(data-namespace='index')
             +first-screen
+            +index-infoblocks(data.index_info)
             .row
                 .col-24.col-xl-23
                     section.catalog

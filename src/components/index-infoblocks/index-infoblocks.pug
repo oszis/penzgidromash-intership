@@ -1,0 +1,52 @@
+include ../../components/infoblock-line/infoblock-line
+include ../../components/infoblock-list/infoblock-list
+
+mixin index-infoblocks(args)
+    section.index-infoblocks&attributes(attributes)
+        .container-fluid.info
+        
+            .row.infoblock-1.d-none.d-xl-flex
+                .col-md-11.offset-1
+                    h2.info__title=args.title
+                    +img({ path: './images/barrel-1.jpg'}).infoblock-1__img.info__img
+                .col-md-10
+                    h3.infoblock-1__info-title!=args.block1.title
+                    p.infoblock-1__subtitle!=args.block1.subtitle
+                    +infoblock-line(args.block1.line1).infoblock-1__line-1
+                    +infoblock-line(args.block1.line2)
+
+
+            .row.infoblock-2#infoblock-2.d-none.d-xl-flex
+                .col-md-14.offset-1
+                    h3.infoblock-2__info-title!=args.block2.title
+                    +infoblock-line(args.block2.line1, true)
+                .col-23
+                    +img({ path: './images/barrel-2.jpg'}).info__img
+
+
+            .row.infoblock-3#infoblock-3.d-none.d-xl-flex
+                .col-md-10.offset-1
+                    .infoblock-3__wrapper
+                        h3.infoblock-3__info-title!=args.block3.title
+                        p.infoblock-3__subtitle!=args.block3.subtitle
+                    +infoblock-line(args.block3.line1)
+                    +infoblock-list(args.block3.list1)
+
+                .col-md-9.offset-3
+                    +img({ path: './images/barrel-3.jpg'}).info__img
+
+
+            .row.infoblock-4#infoblock-4.d-none.d-xl-flex
+                .col-md-11.offset-1
+                    +img({ path: './images/barrel-4.jpg'}).info__img
+                .col-md-10
+                    +infoblock-list(args.block4.list1).infoblock-4__item-1
+                    +infoblock-list(args.block4.list2).infoblock-4__item-2
+                    +infoblock-list(args.block4.list3).infoblock-4__item-3
+
+
+            .row.infoblock-5#infoblock-5.d-none.d-xl-flex
+                .col-md-23
+                    +img({ path: './images/barrel-5.jpg'}).info__img
+            
+            // адаптив
