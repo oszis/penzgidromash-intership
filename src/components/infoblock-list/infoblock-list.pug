@@ -1,0 +1,6 @@
+mixin infoblock-list(args)
+    .infoblock-list&attributes(attributes)
+        h3!= args.title
+        .infoblock-list__wrapper
+            each line in args.lines
+                .infoblock-list__item!=line
