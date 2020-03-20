@@ -1,14 +1,6 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
-* {
-    //font-family: Gilroy, sans-serif;
-    //font-weight: 400;
-}
-a, a:active, a:hover, a:visited {
-    text-decoration: none;
-    outline: none;
-    //color: $black;
-}
+
 .index-slider {
     $root: &;
     position: relative;
@@ -58,9 +50,12 @@ a, a:active, a:hover, a:visited {
     display: inline-block;
     margin-bottom: 35px;
     @include font-4-desktop;
-    //font-size: 3.5rem;
-    //line-height: 1.5;
     color: $black;
+    &:hover, :visited {
+        text-decoration: none;
+        outline: none;
+        color: $black;
+    }
 }
 
 .title-slide__owner {

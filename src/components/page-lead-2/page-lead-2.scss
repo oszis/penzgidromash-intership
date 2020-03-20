@@ -1,12 +1,10 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
-* {
-    //font-family: Gilroy, sans-serif;
-    //font-weight: 400;
-}
+
 .page-lead-2 {
     $root: &;
     display: flex;
+    background: $color-5;
     &__breadcrumbs {
         margin-top: 238px;
         margin-bottom: 26px;
@@ -103,15 +101,27 @@
 @media (max-width: 1199px) and (min-width: 768px) {
     .page-lead-2__content {
         padding-bottom: 80px;
+        &-title {
+            @include font-5-desktop(400);
+        }
+        &-tagline {
+            @include font-3-tablet;
+        }
     }
 }
 
 @media (max-width: 767px) {
     .page-lead-2 {
         height: auto;
-        margin-bottom: 50px;
-    }
-    .page-lead-2__content {
-        padding-bottom: 10px;
+        &__content {
+            padding-bottom: 10px;
+            &-title {
+                @include font-5-mobile;
+            }
+            &-tagline {
+                @include font-3-mobile;
+                margin-bottom: 50px;
+            }
+        }
     }
 }
