@@ -61,5 +61,11 @@
   },
   {
     "name": "index-infoblocks"
+  },
+  {
+    "name": "mobile-button"
+  },
+  {
+    "name": "mobile-list"
   }
 ]

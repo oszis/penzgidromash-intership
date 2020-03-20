@@ -1,5 +1,7 @@
 include ../../components/infoblock-line/infoblock-line
 include ../../components/infoblock-list/infoblock-list
+include ../../components/mobile-button/mobile-button
+include ../../components/mobile-list/mobile-list
 
 mixin index-infoblocks(args)
     section.index-infoblocks&attributes(attributes)
@@ -49,4 +51,11 @@ mixin index-infoblocks(args)
                 .col-md-23
                     +img({ path: './images/barrel-5.jpg'}).info__img
             
-            // адаптив
+            //- адаптив
+            .row.info-mobile.d-xl-none
+                .col
+                    h1!= args.title
+                    h2.info-mobile__title!= args.mobile.title
+                    p.info-mobile__desc!= args.mobile.desc
+                    +mobile-list(args.mobile.list)
+                    +mobile-button(args.mobile.button)
