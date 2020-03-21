@@ -10,6 +10,11 @@
     width: $col-width * 23;
     height: 100vh;
 
+    /* === Временно === */
+    @include media-breakpoint-down(lg){
+        width: $col-width*24;
+    }
+
     &__layer-1 {
         position: absolute;
         left: 0;

@@ -28,11 +28,18 @@
         position: relative;
         width: $col-width*14;
         margin-left: $col-width*8;
-        margin-top: $col-width*1.25;
+        margin-top: $col-width;
         z-index: 99;
         opacity: 0;
         transform: translateY(-5%);
         transition: transform .5s, opacity .3s;
+
+        @include media-breakpoint-down(lg){
+            margin-top: $col-width*2;
+            width: $col-width*22;
+            margin-left: $col-width;
+            transform: translateY(0);
+        }
     }
 
     &__list {
@@ -53,6 +60,14 @@
         min-height: $col-width*0.75;
         text-transform: lowercase;
         transition: color .3s;
+
+        @include media-breakpoint-down(xl){
+            @include font-5-tablet;
+        }
+
+        @include media-breakpoint-down(lg){
+            @include font-5-tablet;
+        }
 
         &:first-letter{
             text-transform: uppercase;
@@ -104,6 +119,12 @@
         transform: translateY(50%);
         transition: transform .5s, opacity .3s;
 
+        @include media-breakpoint-down(lg){
+            width: $col-width*22;
+            margin-left: $col-width;
+            left: 0;
+        }
+
         &-item {
             display: flex;
             justify-content: space-between;
@@ -111,6 +132,19 @@
             color: $color-1;
             @include font-2-desktop;
             //font: 1.8rem /1.8 Gilroy;
+
+            &:first-child{
+                @include media-breakpoint-down(lg){
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+
+            @include media-breakpoint-down(lg){
+                width: 100%;
+                flex-direction: row-reverse;
+                @include font-2-mobile;
+            }
         }
 
         &-email, &-phone{
@@ -139,6 +173,11 @@
     z-index: 98;
     transform: translateX(100%);
     transition: transform .5s ease-in-out;
+
+    @include media-breakpoint-down(lg){
+        width: $col-width*24;
+        margin-left: 0;
+    }
 }
 
 /* === Меню в открытом состоянии === */

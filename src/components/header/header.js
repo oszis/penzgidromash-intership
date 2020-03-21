@@ -65,8 +65,7 @@ class Header extends Component {
                 if (window.pageYOffset < windowHeight - 1) {
                     header.classList.remove('arrow-up');
                     header.classList.add('arrow-down');
-                }
-                if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1) {
+                } else if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1) {
                     header.classList.add('arrow-up');
                     header.classList.remove('arrow-down');
                     if (barbaContainer.getAttribute('data-namespace') === 'index') {
@@ -75,7 +74,11 @@ class Header extends Component {
                 }
                 /* === Изменение логотипа, чтобы он не сливался с фоном на первом и последнем 'экране' документа === */
                 if (barbaContainer.getAttribute('data-namespace') === 'index') {
-                    header.classList.add('contrast-logo');
+                    if (window.pageYOffset < windowHeight - 1) {
+                        header.classList.add('contrast-logo');
+                    } else if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1 && document.documentElement.clientWidth >= 1200){
+                        header.classList.add('contrast-logo');
+                    }
                 }
             } else {
                 header.classList.remove('arrow-up');

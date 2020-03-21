@@ -16,9 +16,26 @@
     padding: 0 $col-width*2 0 $col-width;
     z-index: 97;
 
+    @include media-breakpoint-down(lg){
+        padding-top: $col-width*0.5;
+
+        &__nav-container{
+            visibility: hidden;
+        }
+
+        .header__logo-text{
+            opacity: 1;
+            @include font-1-tablet(500);
+        }
+    }
+
     &__logo-container{
         display: flex;
         height: 38px;
+
+        @include media-breakpoint-down(lg){
+            align-items: center;
+        }
     }
 
     &__logo-svg{
@@ -29,6 +46,7 @@
         z-index: 99;
 
         transition: fill .5s, stroke .5s, width .5s, height .5s;
+
     }
 
     &__logo-text{
@@ -36,13 +54,16 @@
         justify-content: flex-start;
         align-items: center;
         margin-left: $col-width*0.25;
-        @include font-1-desktop;
+        @include font-1-desktop(600);
         //font: 1.4rem Gilroy;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+        opacity: 0;
+        color: $color-1;
+        transition: color .3s, opacity .3s, visibility .3s;
 
-        &--hide{
-            opacity: 0;
+        @include media-breakpoint-down(lg){
+            @include font-1-mobile(600);
         }
     }
 
@@ -62,6 +83,7 @@
         @include font-1-desktop;
         letter-spacing: 0.1em;
         transition: opacity .3s;
+
 
         &:hover, &:active{
             color: $color-5;
@@ -86,6 +108,11 @@
         justify-content: space-between;
         align-items: center;
         transition: background-color .3s;
+
+        @include media-breakpoint-down(lg){
+            background: transparent;
+            margin-right: $col-width;
+        }
     }
 
     &__arrow{
@@ -101,6 +128,10 @@
         &-svg{
             width: 100%;
             height: 100%;
+
+            @include media-breakpoint-down(lg){
+                stroke: $color-5;
+            }
         }
     }
 
@@ -108,13 +139,17 @@
         width: 100%;
         height: $col-width*1.25;
         cursor: pointer;
+        @include media-breakpoint-down(lg){
+            margin-top: $col-width*0.2;
+        }
+
 
         &-inner{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         }
 
         &-lines{
@@ -124,6 +159,10 @@
             flex-direction: column;
             justify-content: space-between;
             position: relative;
+            @include media-breakpoint-down(lg){
+                width: $col-width*0.5;
+            }
+
         }
 
         &-line{
@@ -133,6 +172,10 @@
             transform: translateY(0) rotate(0);
             transition: transform .3s, background-color .3s;
 
+            @include media-breakpoint-down(lg){
+                background: $color-1;
+            }
+
         }
 
         &-text{
@@ -140,6 +183,10 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+
+            @include media-breakpoint-down(lg){
+                visibility: hidden;
+            }
 
             &-item{
                 text-transform: uppercase;
@@ -178,47 +225,47 @@
 /*=== Модификаторы для js ===*/
 
 .contrast {
-    background: $main-color;
-    color: $color-5;
+    @include media-breakpoint-up(xl) {
 
-    .index-slider,
-    .description-block,
-    .catalog-item
-    {
-        background: $main-color;
-        color: $color-5;
-    }
+        .index-slider,
+        .description-block,
+        .catalog-item,
+        .contacts {
+            background: $main-color;
+            color: $color-5;
+        }
 
-    .contacts__title,
-    .contacts__reqest,
-    .contacts__all,
-    .title-slide__name,
-    .title-slide__owner,
-    .title-slide__year,
-    .arrow-link__text,
-    .catalog-item__title{
-        color: $color-5;
-    }
+        .contacts__title,
+        .contacts__reqest,
+        .contacts__all,
+        .title-slide__name,
+        .title-slide__owner,
+        .title-slide__year,
+        .arrow-link__text,
+        .catalog-item__title {
+            color: $color-5;
+        }
 
-    .contacts__line,
-    .title-slide__owner:before,
-    .slider-navigation__arrow:before,
-    .arrow-link__text:before,
-    .arrow-link__text:after,
-    .arrow-link__arrow:before{
-        background-color: $color-5;
-    }
+        .contacts__line,
+        .title-slide__owner:before,
+        .slider-navigation__arrow:before,
+        .arrow-link__text:before,
+        .arrow-link__text:after,
+        .arrow-link__arrow:before {
+            background-color: $color-5;
+        }
 
-    .contacts__arrow,
-    .contacts__arrow--hover,
-    .slider-navigation__arrow svg,
-    .arrow-link__arrow{
-        stroke: $color-5;
-    }
+        .contacts__arrow,
+        .contacts__arrow--hover,
+        .slider-navigation__arrow svg,
+        .arrow-link__arrow {
+            stroke: $color-5;
+        }
 
-    .catalog-item:hover{
-        .catalog-item__title{
-            color: $color-1;
+        .catalog-item:hover {
+            .catalog-item__title {
+                color: $color-1;
+            }
         }
     }
 }
@@ -234,6 +281,16 @@
         fill: $color-5;
         stroke: $main-color;
     }
+
+    .header__logo-text{
+        color: $color-5;
+    }
+
+    .header__sandwich-line{
+        @include media-breakpoint-down(lg){
+            background: $color-5;
+        }
+    }
 }
 
 .big-logo{
@@ -242,6 +299,15 @@
         height: $col-width*1.25;
         fill: $main-color;
         stroke: $color-5;
+    }
+
+    @include media-breakpoint-down(lg){
+        .header__logo-svg{
+            width: $col-width*0.5;
+            height: $col-width*0.5;
+            fill: $color-5;
+            stroke: $main-color;
+        }
     }
 }
 
@@ -267,8 +333,21 @@
         &__logo-svg{
             width: $col-width*1.25;
             height: $col-width*1.25;
-            fill: $color-5!important;
-            stroke: $color-5!important;
+            fill: $color-5;
+            stroke: $color-5;
+
+            @include media-breakpoint-down(lg){
+                width: $col-width*0.5;
+                height: $col-width*0.5;
+                fill: $main-color;
+                stroke: $main-color;
+            }
+        }
+
+        &__logo-text{
+            @include media-breakpoint-down(lg){
+                opacity: 0;
+            }
         }
 
         &__nav-container{
@@ -277,6 +356,10 @@
 
         &__menu {
             background: $main-color;
+
+            @include media-breakpoint-down(lg){
+                background: transparent;
+            }
         }
 
         &__arrow{
@@ -290,6 +373,10 @@
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
+
+                @include media-breakpoint-down(lg){
+                    background: $color-1;
+                }
 
                 &--top{
                     transform: rotate(-45deg);
