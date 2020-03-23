@@ -12,23 +12,21 @@ class Header extends Component {
         const header = document.querySelector('.header');
         const sandwichBtn = document.querySelector('.header__sandwich');
         const arrowBtn = document.querySelector('.header__arrow');
+        const contacts = document.querySelector('.contacts');
 
         /* === Входные значения шапки для страницы 'index' === */
         /* === TODO должно вызываться при загрузке страницы в barba === */
-
         if (barbaContainer.getAttribute('data-namespace') === 'index') {
             header.classList.add('big-logo');
             header.classList.add('contrast-logo');
         }
 
         /* === Клик по кнопке-сендвичу === */
-
         sandwichBtn.addEventListener('click', () => {
             body.classList.toggle('sandwich-open');
         });
 
         /* === Клик по кнопке скролла === */
-
         arrowBtn.addEventListener('click', () => {
             if (header.classList.contains('arrow-down')) {
                 window.scrollTo({
@@ -44,7 +42,6 @@ class Header extends Component {
         });
 
         /* === Изменения шапки при скролле === */
-
         window.addEventListener('scroll', () => {
             windowHeight = document.documentElement.clientHeight;
             /* === Появление навигации и изменение логотипа в начале документа === */
@@ -61,22 +58,22 @@ class Header extends Component {
             }
 
             /* === Появление кнопки скролла только на первом и последнем 'экране' документа === */
-            if (window.pageYOffset < windowHeight - 1 || window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1) {
+            if (window.pageYOffset < windowHeight - 1 || contacts.getBoundingClientRect().top <= 100) {
                 if (window.pageYOffset < windowHeight - 1) {
                     header.classList.remove('arrow-up');
                     header.classList.add('arrow-down');
-                } else if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1) {
+                } else if (contacts.getBoundingClientRect().top <= 100) {
                     header.classList.add('arrow-up');
                     header.classList.remove('arrow-down');
                     if (barbaContainer.getAttribute('data-namespace') === 'index') {
                         body.classList.add('contrast');
                     }
                 }
-                /* === Изменение логотипа, чтобы он не сливался с фоном на первом и последнем 'экране' документа === */
+                /* === Контраст логотипа ена первом и последнем 'экране' документа === */
                 if (barbaContainer.getAttribute('data-namespace') === 'index') {
                     if (window.pageYOffset < windowHeight - 1) {
                         header.classList.add('contrast-logo');
-                    } else if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1 && document.documentElement.clientWidth >= 1200){
+                    } else if (contacts.getBoundingClientRect().top <= 100 && document.documentElement.clientWidth >= 1200) {
                         header.classList.add('contrast-logo');
                     }
                 }
