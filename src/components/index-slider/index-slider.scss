@@ -6,12 +6,9 @@
     position: relative;
     z-index: 2;
     background-color: $color-5;
-<<<<<<< HEAD
     &__swiper {
         overflow: hidden;
     }
-=======
-    transition: background-color .5s;
 }
 .title-slider {
     display: flex;
@@ -201,7 +198,6 @@
     opacity: .3;
     cursor: default;
     pointer-events: none;
->>>>>>> 447e542ce8ccb3722b8d04161e1bf6fe0dff9fd8
 }
 
 @media (max-width: 1199px) {

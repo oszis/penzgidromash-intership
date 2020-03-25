@@ -111,6 +111,42 @@ class SliderPair extends Component {
                 this.translateLastCustom = -this.translateLastOrigin + (this.innerSliderWidth - this.sliderWidth) + this.sliderPairPadd;
                 // this.swiper.wrapperEl.style.transform = translate3d(${this.translateLastCustom}px, 0px, 0px);
             }
+            // анимация при переключении слайдов в обратном направлении
+            this.swiper.on('slidePrevTransitionStart', () => {
+                this.prevIndex = this.swiper.previousIndex;
+                this.prev = this.swiper.slides[this.prevIndex];
+                this.contentSlideImgPrev = this.prev.querySelector('[data-slide-img-animate]');
+                this.number = this.swiper.activeIndex;
+                this.active = this.swiper.slides[this.number];
+                this.contentSlideImg = this.active.querySelector('[data-slide-img-animate]');
+
+                this.swiper.allowSlideNext = false;
+                setTimeout(() => {
+                    this.swiper.allowSlideNext = true;
+                }, 1200);
+
+                // убираем смещение картинки на активном слайде
+                new TimelineLite()
+                    .to(this.contentSlideImg, 1.6, {
+                        xPercent: 0,
+                    });
+
+                // добавляем смещение картинки для слайда, который ранее был активным
+                new TimelineLite()
+                    .to(this.contentSlideImgPrev, 1.6, {
+                        xPercent: 7,
+                    });
+
+                // уходим с последнего слайда
+                if (this.number == this.swiper.slides.length) {
+                    this.innerSliderWidth = getElementWidth(this.slide);
+                    this.sliderWidth = this.swiper.width;
+                    this.translateLastOrigin = (this.swiper.slides.length - 1) * this.sliderWidth;
+                    this.sliderPairPadd = parseFloat(getComputedStyle(this.swiper.slides[0]).paddingRight);
+                    this.translateLastCustom = -this.translateLastOrigin + (this.innerSliderWidth - this.sliderWidth) + this.sliderPairPadd;
+                    // this.swiper.wrapperEl.style.transform = translate3d(${this.translateLastCustom}px, 0px, 0px);
+                }
+            });
         });
     }
 
