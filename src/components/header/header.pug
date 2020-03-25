@@ -3,25 +3,25 @@ include ../sandwich-menu/sandwich-menu
 
 
 mixin header(args)
-    header.header.header--top.arrow-down&attributes(attributes)
+    header.header.header-top.arrow-down&attributes(attributes)
         each logoItem in args[0]
             a.header__logo-container(href=logoItem.link ? logoItem.link : '#')
                 +svg({name: 'logoPenz'}).header__logo-svg
-                .header__logo-text.header__logo-text--hide!= logoItem.text ? logoItem.text : ''
+                .header__logo-text!= logoItem.text ? logoItem.text : ''
         .header__nav-container
             each linkItem in args[1]
                 a.header__nav-link(href=linkItem.link ? linkItem.link : '#')!= linkItem.text ? linkItem.text : ''
-        .menu
-            .sandwich
-                .sandwich__inner
-                    .sandwich__lines
-                        .sandwich__line.sandwich__line--top
-                        .sandwich__line.sandwich__line--bottom
-                .sandwich__text
-                    .sandwich__text-item.sandwich__text-item--menu
+        .header__menu
+            .header__sandwich
+                .header__sandwich-inner
+                    .header__sandwich-lines
+                        .header__sandwich-line.header__sandwich-line--top
+                        .header__sandwich-line.header__sandwich-line--bottom
+                .header__sandwich-text
+                    .header__sandwich-text-item.header__sandwich-text-item--menu
                         | меню
-                    .sandwich__text-item.sandwich__text-item--close
+                    .header__sandwich-text-item.header__sandwich-text-item--close
                         | закрыть
-            .menu__arrow
-                +svg({name: 'headerArrow'}).menu__arrow-svg
+            .header__arrow
+                +svg({name: 'headerArrow'}).header__arrow-svg
         +sandwich-menu(args[1])

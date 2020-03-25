@@ -16,9 +16,26 @@
     padding: 0 $col-width*2 0 $col-width;
     z-index: 97;
 
+    @include media-breakpoint-down(lg){
+        padding-top: $col-width*0.5;
+
+        &__nav-container{
+            visibility: hidden;
+        }
+
+        .header__logo-text{
+            opacity: 1;
+            @include font-1-tablet(500);
+        }
+    }
+
     &__logo-container{
         display: flex;
         height: 38px;
+
+        @include media-breakpoint-down(lg){
+            align-items: center;
+        }
     }
 
     &__logo-svg{
@@ -29,6 +46,7 @@
         z-index: 99;
 
         transition: fill .5s, stroke .5s, width .5s, height .5s;
+
     }
 
     &__logo-text{
@@ -36,13 +54,16 @@
         justify-content: flex-start;
         align-items: center;
         margin-left: $col-width*0.25;
-        @include font-1-desktop;
+        @include font-1-desktop(600);
         //font: 1.4rem Gilroy;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+        opacity: 0;
+        color: $color-1;
+        transition: color .3s, opacity .3s, visibility .3s;
 
-        &--hide{
-            opacity: 0;
+        @include media-breakpoint-down(lg){
+            @include font-1-mobile(600);
         }
     }
 
@@ -63,6 +84,7 @@
         letter-spacing: 0.1em;
         transition: opacity .3s;
 
+
         &:hover, &:active{
             color: $color-5;
             opacity: 1;
@@ -72,21 +94,26 @@
             color: $color-5;
         }
     }
-}
 
-.menu{
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 99;
-    height: 100vh;
-    background: $color-3;
-    width: $col-width;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color .3s;
+    &__menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        height: 100vh;
+        background: $color-3;
+        width: $col-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color .3s;
+
+        @include media-breakpoint-down(lg){
+            background: transparent;
+            margin-right: $col-width;
+        }
+    }
 
     &__arrow{
         width: $col-width*0.6125;
@@ -101,105 +128,191 @@
         &-svg{
             width: 100%;
             height: 100%;
+
+            @include media-breakpoint-down(lg){
+                stroke: $color-5;
+            }
         }
     }
-}
 
-.sandwich{
-    width: 100%;
-    height: $col-width*1.25;
-    cursor: pointer;
+    &__sandwich{
+        width: 100%;
+        height: $col-width*1.25;
+        cursor: pointer;
+        @include media-breakpoint-down(lg){
+            margin-top: $col-width*0.2;
+        }
 
-    &__inner{
+
+        &-inner{
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        }
 
-    &__lines{
-        width: $col-width*0.375;
-        height: $col-width*0.175;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    &__line{
-        width: 100%;
-        height: $col-width*0.025;
-        background: $color-1;
-        transform: translateY(0) rotate(0);
-        transition: transform .3s, background-color .3s;
-
-    }
-
-    &__text{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-
-        &-item{
-            text-transform: uppercase;
-            color: $color-1;
-            transform: rotate(90deg);
-            @include font-1-desktop;
-            //font: 1.4rem /1.6 Gilroy;
-            letter-spacing: 0.1em;
-            transition: opacity .3s;
-
-            &--menu{
-                opacity: 1;
+        &-lines{
+            width: $col-width*0.375;
+            height: $col-width*0.175;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            @include media-breakpoint-down(lg){
+                width: $col-width*0.5;
             }
 
-            &--close{
-                opacity: 0;
+        }
+
+        &-line{
+            width: 100%;
+            height: $col-width*0.025;
+            background: $color-1;
+            transform: translateY(0) rotate(0);
+            transition: transform .3s, background-color .3s;
+
+            @include media-breakpoint-down(lg){
+                background: $color-1;
+            }
+
+        }
+
+        &-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            @include media-breakpoint-down(lg){
+                visibility: hidden;
+            }
+
+            &-item{
+                text-transform: uppercase;
+                color: $color-1;
+                transform: rotate(90deg);
+                @include font-1-desktop;
+                //font: 1.4rem /1.6 Gilroy;
+                letter-spacing: 0.1em;
+                transition: opacity .3s;
+
+                &--menu{
+                    opacity: 1;
+                }
+
+                &--close{
+                    opacity: 0;
+                }
             }
         }
-    }
 
-    &:hover{
-        .sandwich__line--top{
-            transform: translateY(250%);
+        &:hover{
+            .header__sandwich-line--top{
+                transform: translateY(250%);
+            }
+
+            .header__sandwich-line--bottom{
+                transform: translateY(-250%);
+            }
         }
 
-        .sandwich__line--bottom{
-            transform: translateY(-250%);
-        }
     }
-
 }
+
+
 
 /*=== Модификаторы для js ===*/
 
+.contrast {
+    @include media-breakpoint-up(xl) {
 
-.header--top{
+        .index-slider,
+        .description-block,
+        .catalog-item,
+        .contacts {
+            background: $main-color;
+            color: $color-5;
+        }
+
+        .contacts__title,
+        .contacts__reqest,
+        .contacts__all,
+        .title-slide__name,
+        .title-slide__owner,
+        .title-slide__year,
+        .arrow-link__text,
+        .catalog-item__title {
+            color: $color-5;
+        }
+
+        .contacts__line,
+        .title-slide__owner:before,
+        .slider-navigation__arrow:before,
+        .arrow-link__text:before,
+        .arrow-link__text:after,
+        .arrow-link__arrow:before {
+            background-color: $color-5;
+        }
+
+        .contacts__arrow,
+        .contacts__arrow--hover,
+        .slider-navigation__arrow svg,
+        .arrow-link__arrow {
+            stroke: $color-5;
+        }
+
+        .catalog-item:hover {
+            .catalog-item__title {
+                color: $color-1;
+            }
+        }
+    }
+}
+
+.header-top{
     .header__nav-container{
         transform: translateY(0);
     }
 }
 
-.header--contrast {
+.contrast-logo {
     .header__logo-svg {
         fill: $color-5;
         stroke: $main-color;
     }
+
+    .header__logo-text{
+        color: $color-5;
+    }
+
+    .header__sandwich-line{
+        @include media-breakpoint-down(lg){
+            background: $color-5;
+        }
+    }
 }
 
-.header--big-logo{
+.big-logo{
     .header__logo-svg{
         width: $col-width*1.25;
         height: $col-width*1.25;
         fill: $main-color;
         stroke: $color-5;
     }
+
+    @include media-breakpoint-down(lg){
+        .header__logo-svg{
+            width: $col-width*0.5;
+            height: $col-width*0.5;
+            fill: $color-5;
+            stroke: $main-color;
+        }
+    }
 }
 
 .arrow-down{
-    .menu__arrow{
+    .header__arrow{
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
@@ -207,7 +320,7 @@
 }
 
 .arrow-up{
-    .menu__arrow{
+    .header__arrow{
         transform: translateY(0) rotate(180deg);
         opacity: 1;
         visibility: visible;
@@ -215,59 +328,55 @@
     }
 }
 
-.side-menu--open{
+.sandwich-open{
     .header{
         &__logo-svg{
             width: $col-width*1.25;
             height: $col-width*1.25;
-            fill: $color-5!important;
-            stroke: $color-5!important;
+            fill: $color-5;
+            stroke: $color-5;
+
+            @include media-breakpoint-down(lg){
+                width: $col-width*0.5;
+                height: $col-width*0.5;
+                fill: $main-color;
+                stroke: $main-color;
+            }
+        }
+
+        &__logo-text{
+            @include media-breakpoint-down(lg){
+                opacity: 0;
+            }
         }
 
         &__nav-container{
             opacity: 0;
         }
-    }
 
-    .menu {
-        background: $main-color;
+        &__menu {
+            background: $main-color;
+
+            @include media-breakpoint-down(lg){
+                background: transparent;
+            }
+        }
 
         &__arrow{
             opacity: 0;
             visibility: hidden;
         }
-    }
 
-    .sandwich__text-item{
-        &--menu {
-            opacity: 0;
-        }
+        &__sandwich{
+            &-line{
+                background: $color-5;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
 
-        &--close {
-            opacity: 1;
-            color: $color-5;
-        }
-    }
-
-    .sandwich{
-        &__line{
-            background: $color-5;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-
-            &--top{
-                transform: rotate(-45deg);
-            }
-
-            &--bottom{
-                transform: rotate(45deg);
-            }
-        }
-
-        &:hover {
-            .sandwich__line {
-                transform: translateY(0);
+                @include media-breakpoint-down(lg){
+                    background: $color-1;
+                }
 
                 &--top{
                     transform: rotate(-45deg);
@@ -275,6 +384,31 @@
 
                 &--bottom{
                     transform: rotate(45deg);
+                }
+            }
+
+            &-text-item{
+                &--menu {
+                    opacity: 0;
+                }
+
+                &--close {
+                    opacity: 1;
+                    color: $color-5;
+                }
+            }
+
+            &:hover {
+                .header__sandwich-line {
+                    transform: translateY(0);
+
+                    &--top{
+                        transform: rotate(-45deg);
+                    }
+
+                    &--bottom{
+                        transform: rotate(45deg);
+                    }
                 }
             }
         }
