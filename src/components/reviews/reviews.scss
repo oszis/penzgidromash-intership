@@ -1,0 +1,40 @@
+.reviews {
+    $root: &;
+    margin: 130px 0;
+    &__item {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 60px;
+        &-text {
+            @include font-3-desktop;
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .reviews {
+        margin: 80px 0;
+        &__item {
+            margin-right: 40px;
+        }
+        &-text {
+            @include font-3-tablet;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .reviews {
+        margin: 40px 0;
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 40px;
+        }
+        &-text {
+            @include font-3-mobile;
+        }
+    }
+}

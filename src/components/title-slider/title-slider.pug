@@ -1,0 +1,40 @@
+include ../slider-navigation/slider-navigation
+mixin title-slider(args)
+    .title-slider&attributes(attributes)
+        .swiper-container.title-slider__slider.swiper-container-initialized.swiper-container-horizontal
+            .swiper-wrapper
+                .title-slider__slide.swiper-slide.swiper-slide-active
+                    .title-slide
+                        .title-slide__year 2018
+                        .title-slide__content
+                            a.title-slide__name(href='/project-1.html')
+                                | Ванковское
+                                | месторождение
+                            .title-slide__owner ПАО «Газпром»
+                .title-slider__slide.swiper-slide.swiper-slide-next
+                    .title-slide
+                        .title-slide__year 2019
+                        .title-slide__content
+                            a.title-slide__name(href='/project-2.html')
+                                | Чаядинское
+                                | месторождение
+                            .title-slide__owner ПАО «Газпром»
+                .title-slider__slide.swiper-slide.swiper-slide-next
+                    .title-slide
+                        .title-slide__year 2018
+                        .title-slide__content
+                            a.title-slide__name(href='/project-3.html')
+                                | ЛУКОЙЛ - Нижегород
+                                | нефтеоргсинтез,
+                                | г.Кстово
+                            .title-slide__owner ПАО «ЛУКОЙЛ»
+                .title-slider__slide.swiper-slide.swiper-slide-next
+                    .title-slide
+                        .title-slide__year 2017
+                        .title-slide__content
+                            a.title-slide__name(href='/project-4.html')
+                                | Ванковское
+                                | месторождение
+                            .title-slide__owner ПАО «НК «Роснефть»
+                span.swiper-notification
+        +slider-navigation

@@ -1,0 +1,68 @@
+.title-slider {
+    $root: &;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    &__slider {
+        flex: 0 1 100%;
+    }
+    &__navigation {
+        flex: 0 0 auto;
+    }
+}
+.title-slider .swiper-container .title-slider .swiper-slide .title-slider .swiper-wrapper {
+    height: 100%;
+}
+.title-slider .swiper-container {
+    width: 100%;
+}
+.title-slide {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: 100%;
+    color: $color-1;
+    &__year {
+        @include font-3-desktop;
+        line-height: 1.9;
+        color: $black;
+    }
+    &__content {
+        margin: auto 0;
+    }
+    &__name {
+        display: inline-block;
+        margin-bottom: 35px;
+        @include font-4-tablet;
+        color: $black;
+
+        &:hover, :visited {
+            text-decoration: none;
+            outline: none;
+            color: $black;
+        }
+    }
+    &__owner {
+        position: relative;
+        margin-bottom: 5px;
+        @include font-3-tablet;
+        color: $black;
+        transition: color .3s linear;
+        padding-left: 80px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 37%;
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: $black;
+            transition: background-color .3s linear;
+        }
+    }
+}

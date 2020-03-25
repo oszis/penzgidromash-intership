@@ -1,0 +1,36 @@
+.info-block-10 {
+    $root: &;
+    &__text {
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        margin-bottom: 140px;
+        &-descr {
+            width: 42vw;
+            margin-right: 4vw;
+            @include font-2-desktop;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1119px) {
+    .info-block-10__text {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .info-block-10__text {
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 45px;
+        &-descr {
+            width: 100%;
+            margin-bottom: 5vw;
+            @include font-2-mobile;
+        }
+    }
+}

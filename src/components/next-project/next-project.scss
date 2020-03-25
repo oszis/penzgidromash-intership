@@ -1,0 +1,149 @@
+.next-project {
+    $root: &;
+    position: relative;
+    padding: 140px 8vw 140px 60px;
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        :before {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $black;
+            opacity: .55;
+        }
+    }
+    &__content {
+        position: relative;
+        color: $white;
+        z-index: 2;
+        &-back {
+            position: relative;
+            top: 0;
+            display: block;
+            @include font-2-desktop;
+            margin-bottom: 106px;
+            padding-left: 60px;
+            color: $white;
+            text-transform: lowercase;
+            transition: opacity .3s ease-out;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 40px;
+                height: 1px;
+                background-color: #fff;
+                transform: translateY(-50%);
+                :before {
+                    bottom: -9px;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+                :after {
+                    top: -8px;
+                    transform: translateY(-50%) rotate(-45deg)
+                }
+            }
+        }
+        &-text {
+            @include font-2-desktop;
+            margin-bottom: 24px;
+        }
+        &-title {
+            width: 62vw;
+            @include font-4-desktop;
+        }
+        &-button {
+            position: relative;
+            display: flex;
+            @include font-2-desktop;
+            border: 1px solid #fff;
+            padding: 25px 66px 25px 40px;
+            color: #fff;
+            cursor: pointer;
+            span {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 40px;
+                width: 9px;
+                height: 9px;
+                transform: translateY(-50%) rotate(-45deg);
+                transition: transform .3s ease-out;
+                :before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $white;
+                }
+                :after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+
+.next-project__content-back:active,
+.next-project__content-back:focus,
+.next-project__content-back:hover {
+    color: #fff;
+    opacity: .6
+}
+.next-project__content-back span:after,
+.next-project__content-back span:before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    width: 24px;
+    height: 1px;
+    background-color: #fff
+}
+
+.next-project__content-back:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -54px;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transform: translateY(-50%)
+}
+
+.next-project__content-button:active,
+.next-project__content-button:focus,
+.next-project__content-button:hover {
+    color: #fff
+}
+
+.next-project__content-button:active span,
+.next-project__content-button:focus span,
+.next-project__content-button:hover span {
+    transform: translate(20%, -50%) rotate(-45deg)
+}

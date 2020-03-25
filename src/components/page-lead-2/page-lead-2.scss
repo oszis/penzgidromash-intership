@@ -20,16 +20,12 @@
     }
     &__content-title {
         @include font-5-desktop;
-        //font-size: 84px;
-        //line-height: 1;
         font-weight: 500;
         width: 66vw;
     }
     &__content-tagline {
         margin-top: 45px;
         @include font-3-desktop;
-        //font-size: 25px;
-        //line-height: 1.6;
         width: 45vw;
         color: $black;
     }
@@ -43,8 +39,6 @@
     align-items: center;
     &__link {
         @include font-1-desktop;
-        //font-weight: 300;
-        //font-size: 14px;
         color: ($black, .5);
         transition: color .3s;
         cursor: pointer;

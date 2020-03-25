@@ -1,11 +1,10 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
-/* === Не могу понять где находится этот блок, шрифты не менял === */
 
 .equipment-slider {
     $root: &;
     display: flex;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
     &__nav {
         width: 20vw;
         margin-right: 4vw;
@@ -15,21 +14,25 @@
         width: 66vw;
         overflow: hidden;
     }
+    &_navigation {
+        height: 27vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__counter {
+        display: flex;
+        align-items: center;
+        @include font-3-desktop;
+    }
     &__slide {
         position: relative;
         width: 50vw;
         margin-right: 8vw;
         &-title {
-            font-size: calc(8px + (450vw - 3456px)/1152 + 8px + (450vh - 3001.5px)/413);
+            @include font-4-desktop;
             color: $color-1;
             margin-bottom: 16px;
-        }
-        &-text {
-            width: 37vw;
-            font-size: calc(6.93px + (207vw - 1589.76px)/1152 + 6.93px + (207vh - 1380.69px)/413);
-            color: $color-1;
-            margin-right: 4vw;
-            line-height: 1.7;
         }
         &:last-child {
             margin-right: 16vw
@@ -59,30 +62,6 @@
             height: 100%;
             object-fit: cover;
         }
-        &-icons {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: opacity .5s, visibility .5s;
-            span {
-                font-weight: 500;
-                font-size: calc(4.2px + (280vw - 2150.4px)/1152 + 4.2px + (280vh - 1867.6px)/413);
-                color: $white;
-                margin-right: 16px;
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-            svg {
-                width: 25px;
-                height: 25px;
-                margin-right: 8px;
-            }
-        }
     }
 }
 .equipment-slider__image:hover .equipment-slider__image-overlay {
@@ -105,12 +84,17 @@
     .equipment-slider {
         flex-direction: column;
         flex-wrap: wrap;
-        margin-left: 60px;
-        margin-bottom: 80px;
+        padding-bottom: 80px;
         &__nav {
             margin-bottom: 40px;
             width: 100%;
             margin-right: 0;
+        }
+        &__counter {
+            @include font-3-tablet;
+        }
+        &__slide-title {
+            @include font-4-tablet;
         }
     }
     .slider-navigation, .slider-navigation_equipment {
@@ -133,10 +117,15 @@
 }
 @media (max-width: 767px) {
     .equipment-slider {
-        margin-left: 30px!important;
-        margin-bottom: 40px!important;
+        padding-bottom: 40px!important;
         &__nav {
             margin-bottom: 20px!important;
+        }
+        &__counter {
+            @include font-3-mobile;
+        }
+        &__slide-title {
+            @include font-4-mobile;
         }
     }
     .slider-pair {

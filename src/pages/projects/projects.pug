@@ -2,9 +2,12 @@ extends ../../layout/layout
 include ../../components/page-lead-2/page-lead-2
 include ../../components/category-card/category-card
 
+include ../../components/index-slider/index-slider
+
 block content
     main#barba-wrapper
         .barba-container(data-namespace='projects')
+            +index-slider
             +page-lead-2({
                 mainLink: '/',
                 name: 'Главная',

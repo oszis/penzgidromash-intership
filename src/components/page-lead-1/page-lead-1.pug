@@ -1,0 +1,18 @@
+mixin page-lead-1(args)
+    .page-lead-1&attributes(attributes)
+        .page-lead-1__content
+            .page-lead-1__content-offset
+                .breadcrumbs.page-lead-1__breadcrumbs
+                    a(href=args.mainLink).page-lead-1__breadcrumbs__link=args.name
+                    .page-lead-1__breadcrumbs__icon
+                        span
+                    a(href=args.pageLink).page-lead-1__breadcrumbs__link=args.subName
+                    .page-lead-1__breadcrumbs__icon
+                        span
+                    a(href=args.pageLinkUnder).page-lead-1__breadcrumbs__link=args.subNameUnder
+                    .page-lead-1__breadcrumbs__icon
+                        span
+                .page-lead-1__content-title=args.title
+        .page-lead-1__background
+            .page-lead-1__background-overlay
+            +img({path: '../../common/images/slider3.png'})

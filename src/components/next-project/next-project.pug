@@ -1,0 +1,12 @@
+mixin next-project(args)
+    .next-project&attributes(attributes)
+        .next-project__background
+            +img({path: args.imgPath})
+        .next-project__content
+            a(href=args.linkBack).next-project__content-back
+                span=args.linkBackName
+            .next-project__content-text=args.text
+            .d-flex.align-items-center.justify-content-between.next-project__content-bottom
+                .next-project__content-title=args.title
+                a(href=args.buttonLink).next-project__content-button=args.buttonName
+                    span
