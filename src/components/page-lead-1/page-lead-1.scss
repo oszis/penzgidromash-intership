@@ -86,6 +86,13 @@
         }
     }
 }
+.page-lead-1__breadcrumbs__icon span:after,
+.page-lead-1__breadcrumbs__icon span:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-color: hsla(0, 0%, 84%, .5);
+}
 
 @media (max-width: 1439px) and (min-width: 1200px) {
     .page-lead-1__content-title {

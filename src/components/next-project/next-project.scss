@@ -17,7 +17,7 @@
             height: 100%;
             object-fit: cover;
         }
-        :before {
+        &:before {
             content: "";
             position: absolute;
             z-index: 2;
@@ -35,7 +35,6 @@
         z-index: 2;
         &-back {
             position: relative;
-            top: 0;
             display: block;
             @include font-2-desktop;
             margin-bottom: 106px;
@@ -49,13 +48,13 @@
                 left: 0;
                 width: 40px;
                 height: 1px;
-                background-color: #fff;
+                background-color: $white;
                 transform: translateY(-50%);
-                :before {
+                &:before {
                     bottom: -9px;
                     transform: translateY(-50%) rotate(45deg);
                 }
-                :after {
+                &:after {
                     top: -8px;
                     transform: translateY(-50%) rotate(-45deg)
                 }
@@ -73,9 +72,9 @@
             position: relative;
             display: flex;
             @include font-2-desktop;
-            border: 1px solid #fff;
+            border: 1px solid $white;
             padding: 25px 66px 25px 40px;
-            color: #fff;
+            color: $white;
             cursor: pointer;
             span {
                 display: block;
@@ -86,7 +85,7 @@
                 height: 9px;
                 transform: translateY(-50%) rotate(-45deg);
                 transition: transform .3s ease-out;
-                :before {
+                &:before {
                     content: "";
                     position: absolute;
                     left: 0;
@@ -95,7 +94,7 @@
                     height: 1px;
                     background-color: $white;
                 }
-                :after {
+                &:after {
                     content: "";
                     position: absolute;
                     right: 0;
@@ -112,8 +111,8 @@
 .next-project__content-back:active,
 .next-project__content-back:focus,
 .next-project__content-back:hover {
-    color: #fff;
-    opacity: .6
+    color: $white;
+    opacity: .6;
 }
 .next-project__content-back span:after,
 .next-project__content-back span:before {
@@ -122,7 +121,7 @@
     left: -4px;
     width: 24px;
     height: 1px;
-    background-color: #fff
+    background-color: $white;
 }
 
 .next-project__content-back:before {
@@ -132,18 +131,18 @@
     bottom: -54px;
     width: 100%;
     height: 1px;
-    background-color: #fff;
+    background-color: $white;
     transform: translateY(-50%)
 }
 
 .next-project__content-button:active,
 .next-project__content-button:focus,
 .next-project__content-button:hover {
-    color: #fff
+    color: $white;
 }
 
 .next-project__content-button:active span,
 .next-project__content-button:focus span,
 .next-project__content-button:hover span {
-    transform: translate(20%, -50%) rotate(-45deg)
+    transform: translate(20%, -50%) rotate(-45deg);
 }

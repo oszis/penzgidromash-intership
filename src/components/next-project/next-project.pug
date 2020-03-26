@@ -4,7 +4,8 @@ mixin next-project(args)
             +img({path: args.imgPath})
         .next-project__content
             a(href=args.linkBack).next-project__content-back
-                span=args.linkBackName
+                span
+                p=args.linkBackName
             .next-project__content-text=args.text
             .d-flex.align-items-center.justify-content-between.next-project__content-bottom
                 .next-project__content-title=args.title
