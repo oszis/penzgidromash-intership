@@ -3,7 +3,6 @@ import { commonComponents } from './commonComponents';
 import '../../vendor/split-text/js/vendor/TweenMax.min';
 
 const defaultTransition = (transition) => {
-
     /* === wtf fix === */
     document.querySelector('body').classList.remove('sandwich-open');
     // if (nGetBody()
