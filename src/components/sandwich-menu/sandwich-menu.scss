@@ -28,14 +28,14 @@
         position: relative;
         width: $col-width*14;
         margin-left: $col-width*8;
-        margin-top: $col-width;
+        margin-top: 100px;
         z-index: 99;
         opacity: 0;
         transform: translateY(-5%);
         transition: transform .5s, opacity .3s;
 
         @include media-breakpoint-down(lg){
-            margin-top: $col-width*2;
+            margin-top: 100px;
             width: $col-width*22;
             margin-left: $col-width;
             transform: translateY(0);
@@ -116,7 +116,7 @@
         bottom: 0;
         left: $col-width*8;
         width: $col-width*14;
-        height: $col-width*1.25;
+        height: 100px;
         z-index: 99;
         opacity: 0;
         transform: translateY(50%);

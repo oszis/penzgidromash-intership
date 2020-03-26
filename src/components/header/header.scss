@@ -5,11 +5,11 @@
 /* === Базовые значения === */
 
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: $col-width*24;
-    height: $col-width*1.25;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,10 +21,14 @@
     }
 
     &__logo-container{
+        position: fixed;
+        top: 33px;
+        left: $col-width;
         display: flex;
         height: 38px;
+        z-index: 99;
 
-        @include media-breakpoint-down(lg){
+        @include media-breakpoint-down(xl){
             align-items: center;
         }
     }
@@ -36,7 +40,6 @@
         min-height: 26px;
         fill: $main-color;
         stroke: $main-color;
-        z-index: 99;
 
         transition: fill .5s, stroke .5s, width .5s, height .5s;
 
@@ -64,8 +67,9 @@
     &__nav-container{
         width: $col-width*10;
         display: flex;
+        margin-left: $col-width*11;
         justify-content: space-between;
-        transform: translateY(-300%);
+        //transform: translateY(-300%);
         transition: opacity .3s, transform .5s;
 
         @include media-breakpoint-down(lg){
@@ -75,21 +79,25 @@
 
     &__nav-link{
         text-transform: uppercase;
-        opacity: .5;
-        color: $color-5;
+        opacity: .6;
+        color: $color-1;
         //font: 1.4rem Gilroy;
-        @include font-1-desktop;
+        @include font-1-desktop(500);
         letter-spacing: 0.1em;
         transition: opacity .3s;
 
+        @include media-breakpoint-down(xl){
+            @include font-1-mobile(500);
+        }
+
 
         &:hover, &:active{
-            color: $color-5;
+            color: $color-1;
             opacity: 1;
         }
 
         &:visited{
-            color: $color-5;
+            color: $color-1;
         }
     }
 
@@ -135,10 +143,13 @@
 
     &__sandwich{
         width: 100%;
+        min-width: 30px;
         height: $col-width*1.25;
         cursor: pointer;
         @include media-breakpoint-down(lg){
-            margin-top: $col-width*0.2;
+            display: flex;
+            align-items: center;
+            height: 100px;
         }
 
 
@@ -152,7 +163,9 @@
 
         &-lines{
             width: $col-width*0.375;
+            min-width: 30px;
             height: $col-width*0.175;
+            min-height: 11px;
             position: relative;
             @include media-breakpoint-down(lg){
                 width: $col-width*0.5;
@@ -164,6 +177,7 @@
             position: absolute;
             width: 100%;
             height: $col-width*0.025;
+            min-height: 2px;
             background: $color-1;
             transform: translateY(0) rotate(0);
             transition: transform .3s, background-color .3s, top .3s, bottom .3s;
@@ -276,8 +290,20 @@
 }
 
 .header-top{
-    .header__nav-container{
-        transform: translateY(0);
+    .header__logo-text{
+        opacity: 1;
+    }
+}
+
+.index-header{
+    .header__logo-text{
+        display: none;
+
+        @include media-breakpoint-down(lg){
+            display: block;
+            opacity: 1;
+            @include font-1-mobile(600);
+        }
     }
 }
 
@@ -294,6 +320,19 @@
     .header__sandwich-line{
         @include media-breakpoint-down(lg){
             background: $color-5;
+        }
+    }
+
+    .header__nav-link{
+        color: $color-5;
+
+        &:hover, &:active{
+            color: $color-5;
+            opacity: 1;
+        }
+
+        &:visited{
+            color: $color-5;
         }
     }
 }
@@ -350,6 +389,8 @@
         }
 
         &__logo-text{
+            opacity: 0;
+            visibility: hidden;
             @include media-breakpoint-down(lg){
                 opacity: 0;
             }

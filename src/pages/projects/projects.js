@@ -8,6 +8,7 @@ Barba.BaseView.extend({
     },
     async onEnterCompleted() {
         await commonComponents.preloader.preloading;
+        commonComponents.header.update();
         objectFitPolyfill();
     },
     onLeave() {

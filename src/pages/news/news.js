@@ -9,6 +9,7 @@ Barba.BaseView.extend({
     },
     async onEnterCompleted() {
         await commonComponents.preloader.preloading;
+        commonComponents.header.update();
         objectFitPolyfill();
         const slider = new NewsSlider(document.querySelector('.news-slider'));
     },

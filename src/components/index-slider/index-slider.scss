@@ -6,6 +6,7 @@
     position: relative;
     z-index: 2;
     background-color: $color-5;
+    transition: background-color .5s;
     &__swiper {
         overflow: hidden;
     }
