@@ -1,11 +1,9 @@
 import Component from '../../common/js/component';
-import {
-    getDeviceType, listen, unlisten, nFindComponent, Resize,
-} from '../../common/js/helpers';
+import { getDeviceType, listen, unlisten, nFindComponent, Resize } from '../../common/js/helpers';
 
-class CatalogItem extends Component {
+class PenzDepartments extends Component {
     constructor(nRoot) {
-        super(nRoot, 'catalog-item');
+        super(nRoot, 'penz-departments');
         this.currentDevice = getDeviceType();
         this.afterResize = this.afterResize.bind(this);
 
@@ -57,4 +55,4 @@ class CatalogItem extends Component {
     }
 }
 
-export default CatalogItem;
+export default PenzDepartments;

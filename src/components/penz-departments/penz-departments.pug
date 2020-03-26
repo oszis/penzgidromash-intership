@@ -1,0 +1,9 @@
+mixin penz-departments(args)
+    .penz-departments&attributes(attributes)
+        .penz-departments__title Отделы
+        .penz-departments__info
+            each item in data.penzDepartments
+                .penz-departments__info-item
+                    p.penz-departments__dep-title!= item.title
+                    p.penz-departments__phone!= item.phone
+                    p.penz-departments__email!= item.email

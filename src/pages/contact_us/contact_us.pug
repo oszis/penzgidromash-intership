@@ -1,0 +1,11 @@
+extends ../../layout/layout
+include ../../components/contact-us-head/contact-us-head
+include ../../components/contact-us-map/contact-us-map
+include ../../components/penz-departments/penz-departments
+
+block content
+    main#barba-wrapper
+        .barba-container(data-namespace='contact_us')
+            +contact-us-head
+            +contact-us-map
+            +penz-departments

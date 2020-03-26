@@ -1,0 +1,44 @@
+@import '../../common/scss/colors';
+@import '../../common/scss/variables';
+@import '../../common/scss/typography';
+
+.penz-departments {
+    $root: &;
+    position: relative;
+    overflow: hidden;
+    width: $col-width * 23;
+    padding: 100px $col-width;
+    display: flex;
+    color: $color-1;
+    &__title{
+        @include font-4-desktop;
+        width: $col-width * 6;
+    }
+    &__info{
+        width: $col-width * 15;
+    }
+    &__info-item{
+        display: flex;
+        border-bottom: 1px solid $color-1;
+        height: 100px;
+
+    }
+    &__dep-title{
+        @include font-3-desktop;
+        width: $col-width * 8;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    &__phone{
+        @include font-2-desktop;
+        width: $col-width * 4;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    &__email{
+        @include font-2-desktop;
+        width: $col-width * 3;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

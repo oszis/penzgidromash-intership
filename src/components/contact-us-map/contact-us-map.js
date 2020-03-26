@@ -1,11 +1,9 @@
 import Component from '../../common/js/component';
-import {
-    getDeviceType, listen, unlisten, nFindComponent, Resize,
-} from '../../common/js/helpers';
+import { getDeviceType, listen, unlisten, nFindComponent, Resize } from '../../common/js/helpers';
 
-class CatalogItem extends Component {
+class ContactUsMap extends Component {
     constructor(nRoot) {
-        super(nRoot, 'catalog-item');
+        super(nRoot, 'contact-us-map');
         this.currentDevice = getDeviceType();
         this.afterResize = this.afterResize.bind(this);
 
@@ -57,4 +55,4 @@ class CatalogItem extends Component {
     }
 }
 
-export default CatalogItem;
+export default ContactUsMap;

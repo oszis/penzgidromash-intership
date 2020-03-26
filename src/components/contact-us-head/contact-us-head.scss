@@ -1,0 +1,36 @@
+@import '../../common/scss/colors';
+@import '../../common/scss/variables';
+@import '../../common/scss/typography';
+
+
+.contact-us-head {
+    $root: &;
+    position: relative;
+    overflow: hidden;
+    width: $col-width * 23;
+    padding: 100px $col-width;
+    color: #1C1C1C;
+    &__blocks{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__nav{
+        opacity: 0.5;
+        @include font-1-desktop;
+        a, a:focus, a:visited, a:hover{
+            color: $color-1;
+        }
+        span{
+            font-weight: 500;
+        }
+    }
+    &__main-title{
+        @include font-5-desktop;
+    }
+    &__title{
+        @include font-4-desktop;
+    }
+    &__text{
+        @include font-3-desktop;
+    }
+}

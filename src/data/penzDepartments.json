@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Отдел продаж",
+        "phone": "8 (495) 118-39-99, доб. 3",
+        "email": "zakaz@penzgidromash.ru"
+    },
+    {
+        "title": "Отдел главного конструктора",
+        "phone": "8 (495) 118-39-99, доб. 3",
+        "email": "ogk@penzgidromash.ru"
+    },
+    {
+        "title": "Отдел кадров",
+        "phone": "8 (495) 118-39-99, доб. 3",
+        "email": "rabota@penzgidromash.ru"
+    },
+    {
+        "title": "Отдел снабжения",
+        "phone": "8 (495) 118-39-99, доб. 3",
+        "email": "omts@penzgidromash.ru"
+    }
+]

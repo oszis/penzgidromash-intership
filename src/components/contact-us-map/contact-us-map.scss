@@ -1,0 +1,6 @@
+@import '../../common/scss/variables';
+
+.contact-us-map {
+    $root: &;
+    width: $col-width * 23;
+}

@@ -1,14 +1,11 @@
 import Component from '../../common/js/component';
-import {
-    getDeviceType, listen, unlisten, nFindComponent, Resize,
-} from '../../common/js/helpers';
+import { getDeviceType, listen, unlisten, nFindComponent, Resize } from '../../common/js/helpers';
 
-class CatalogItem extends Component {
+class ContactUsHead extends Component {
     constructor(nRoot) {
-        super(nRoot, 'catalog-item');
+        super(nRoot, 'contact-us-head');
         this.currentDevice = getDeviceType();
         this.afterResize = this.afterResize.bind(this);
-
         if (getDeviceType() === 'mobile') {
             this.initMobile();
         } else {
@@ -57,4 +54,4 @@ class CatalogItem extends Component {
     }
 }
 
-export default CatalogItem;
+export default ContactUsHead;
