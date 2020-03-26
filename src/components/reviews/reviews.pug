@@ -1,0 +1,21 @@
+include ../section-title/section-title
+include ../arrow-link/arrow-link
+
+mixin reviews(args)
+    .reviews&attributes(attributes)
+        .container-fluid
+            .row
+                .col-6
+                    +section-title({
+                        title: 'Отзывы',
+                    })
+                .col-17.offset-1
+                    .reviews__item
+                        .reviews__item-text Отзыв компании "Сибур Нефтехим"
+                        +arrow-link({
+                            link: '/',
+                            text: 'Смотреть',
+                        })
+
+
+

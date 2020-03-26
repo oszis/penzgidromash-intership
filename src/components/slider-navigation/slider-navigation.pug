@@ -1,0 +1,11 @@
+mixin slider-navigation(args)
+    .slider-navigation&attributes(attributes).title-slider__navigation.slider-navigation_no-counter
+        .slider-navigation__counter
+            .slider-navigation__current 01
+            .slider-navigation__separator /
+            .slider-navigation__total
+        .d-flex.align-items-center.slider-navigation__arrows
+            .slider-navigation__arrow.slider-navigation__prev.swiper-button-disabled(tabindex='0', role='button', aria-label='Previous slide', aria-disabled='true')
+                +svg({name: 'arrow'})
+            .slider-navigation__arrow.slider-navigation__next.focused(tabindex='0', role='button', aria-label='Next slide', aria-disabled='false')
+                +svg({name: 'arrow'})

@@ -1,17 +1,18 @@
 include ../section-title/section-title
+include ../arrow-link/arrow-link
 mixin project-slider(args)
     .project-slider&attributes(attributes)
-        +section-title({ title: 'Оборудование'}).project-slider__title
+        +section-title({ title: 'Оборудование'})
         .slider-navigation.project-slider__navigation
             .slider-navigation__counter.slider-navigation__counter-project
                 .slider-navigation__current 01
                 .slider-navigation__separator /
                 .slider-navigation__total 05
             .d-flex.align-items-center.slider-navigation__arrows
-                .slider-navigation__arrow.slider-navigation__prev-project.swiper-button-disabled(aria-disabled='true')
+                .slider-navigation__arrow.slider-navigation__prev.swiper-button-disabled(aria-disabled='true')
                     .slider-navigation__arrow-svg
                         +svg({ name: 'arrow' })
-                .slider-navigation__arrow.slider-navigation__next-project.focused(aria-disabled='false')
+                .slider-navigation__arrow.slider-navigation__next.focused(aria-disabled='false')
                     .slider-navigation__arrow-svg
                         +svg({ name: 'arrow' })
         .project-slider__bottom
@@ -19,13 +20,38 @@ mixin project-slider(args)
                 .swiper-wrapper.project-slider__wrapper
                     .swiper-slide.project-slider__slide.swiper-slide-active
                         .project-slider__slide-title Трубный газовый расширитель ТГР-400
+                        .project-slider__slide-line
+                        +arrow-link({
+                                text: 'Смотреть продукт',
+                                href: '#'
+                        })
                     .swiper-slide.project-slider__slide.swiper-slide-next
                         .project-slider__slide-title Трубный газовый расширитель ТГР-600
+                        .project-slider__slide-line
+                        +arrow-link({
+                            text: 'Смотреть продукт',
+                            href: '#'
+                        })
                     .swiper-slide.project-slider__slide
-                        .project-slider__slide-title Сепаратор НГС ||-4,0-1600
+                        .project-slider__slide-title Сепаратор НГС<br>||-4,0-1600
+                        .project-slider__slide-line
+                        +arrow-link({
+                            text: 'Смотреть продукт',
+                            href: '#'
+                        })
                     .swiper-slide.project-slider__slide
-                        .project-slider__slide-title Сепаратор НГС ||-4,0-1600
+                        .project-slider__slide-title Сепаратор НГС<br>||-4,0-1600
+                        .project-slider__slide-line
+                        +arrow-link({
+                            text: 'Смотреть продукт',
+                            href: '#'
+                        })
                     .swiper-slide.project-slider__slide
-                        .project-slider__slide-title Сепаратор НГС ||-4,0-1600
+                        .project-slider__slide-title Сепаратор НГС<br>||-4,0-1600
+                        .project-slider__slide-line
+                        +arrow-link({
+                            text: 'Смотреть продукт',
+                            href: '#'
+                        })
                 span.swiper-notification(aria-live='assertive' aria-atomic='true')
 

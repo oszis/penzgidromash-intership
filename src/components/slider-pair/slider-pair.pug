@@ -1,0 +1,32 @@
+mixin slider-pair(args)
+    .slider-pair&attributes(attributes).swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-autoheight(style='cursor: grab;')
+        .swiper-wrapper
+            .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-active
+                .slide
+                    .slide__container(data-bottom-animate='data-bottom-animate')
+                        .slide__box(data-slide-box-animate='data-slide-box-animate')
+                        .slide__background
+                            picture.picture.picture_cover.slide__img(data-slide-img-animate='data-slide-img-animate')
+                                +img({path: '../../common/images/slider1.png'})
+            .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-next
+                .slide
+                    .slide__container(data-bottom-animate='data-bottom-animate')
+                        .slide__box(data-slide-box-animate='data-slide-box-animate')
+                        .slide__background
+                            picture.picture.picture_cover.slide__img(data-slide-img-animate='data-slide-img-animate')
+                                +img({path: '../../common/images/slider2.png'})
+            .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-next
+                .slide
+                    .slide__container(data-bottom-animate='data-bottom-animate')
+                        .slide__box(data-slide-box-animate='data-slide-box-animate')
+                        .slide__background
+                            picture.picture.picture_cover.slide__img(data-slide-img-animate='data-slide-img-animate')
+                                +img({path: '../../common/images/slider3.png'})
+            .swiper-slide.slider-pair__slide.bottom-right-animation.swiper-slide-next
+                .slide
+                    .slide__container(data-bottom-animate='data-bottom-animate')
+                        .slide__box(data-slide-box-animate='data-slide-box-animate')
+                        .slide__background
+                            picture.picture.picture_cover.slide__img(data-slide-img-animate='data-slide-img-animate')
+                                +img({path: '../../common/images/slider4.png'})
+            span.swiper-notification(aria-live='assertive', aria-atomic='true')
