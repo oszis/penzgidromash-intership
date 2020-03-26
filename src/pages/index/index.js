@@ -18,22 +18,21 @@ Barba.BaseView.extend({
 
     },
 }).init();
-let nSwiper = new Swiper(document.querySelectorAll('.swiper-container'), {
-    slidesPerView: 'auto',
-    direction: 'horizontal',
-    speed: 800,
-    keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-    },
-    pagination: {
-        el: '.slider-navigation__counter',
-        clickable: true,
-        type: 'fraction',
-    },
-    navigation: {
-        nextEl: '.slider-navigation__next',
-        prevEl: '.slider-navigation__prev',
-    },
-});
-
+// const nSwiper = new Swiper(document.querySelectorAll('.swiper-container'), {
+//     slidesPerView: 'auto',
+//     direction: 'horizontal',
+//     speed: 800,
+//     keyboard: {
+//         enabled: true,
+//         onlyInViewport: true,
+//     },
+//     pagination: {
+//         el: '.slider-navigation__counter',
+//         clickable: true,
+//         type: 'fraction',
+//     },
+//     navigation: {
+//         nextEl: '.slider-navigation__next',
+//         prevEl: '.slider-navigation__prev',
+//     },
+// });

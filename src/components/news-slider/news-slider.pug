@@ -1,0 +1,22 @@
+include ../../common/pug/mixins
+include ../../components/arrow-link/arrow-link
+
+mixin news-slider(args)
+    .news-slider&attributes(attributes)
+        .swiper-container.news-slider__swiper-container
+            .swiper-wrapper.news-slider__swiper-wrapper
+                each slide in args
+                    .swiper-slide.news-slider__swiper-slide
+                        a(href=slide.link ? slide.link: '#').news-slider__link
+                            .news-slider__img-container
+                                +img({path: slide.path ? slide.path : './images/news-default.jpg'}).news-slider__img
+                            .news-slider__data!= slide.data ? slide.data : '20.04.2019'
+                            .news-slider__title!= slide.title ? slide.title : 'Новость компании рыбный текст'
+                            .news-slider__text!= slide.text ? slide.text : 'Рыба! Несомненный интерес представляет и&nbsp;тот факт, что роговая обманка сбрасывает каркасный биотит. Несомненный интерес представляет и&nbsp;тот факт.'
+                        +arrow-link({text: 'Смотреть', href: slide.link ? slide.link : '#'})
+        .news-slider__control
+            .swiper-button-prev.news-slider__swiper-button-prev
+                +svg({ name: 'arrow-link' }).news-slider-svg.news-slider__swiper-button-prev-svg
+            .swiper-pagination.news-slider__swiper-pagination
+            .swiper-button-next.news-slider__swiper-button-next
+                +svg({ name: 'arrow-link' }).news-slider-svg.news-slider__swiper-button-next-svg

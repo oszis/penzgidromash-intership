@@ -2,13 +2,14 @@ import Component from '../../common/js/component';
 import {
     getDeviceType, listen, unlisten, nFindComponent, Resize,
 } from '../../common/js/helpers';
+import Swiper from '../../../node_modules/swiper/dist/js/swiper.min';
 
-class PageLead2 extends Component {
+
+class NewsSlider extends Component {
     constructor(nRoot) {
-        super(nRoot, 'page-lead-2');
+        super(nRoot, 'news-slider');
         this.currentDevice = getDeviceType();
         this.afterResize = this.afterResize.bind(this);
-
         if (getDeviceType() === 'mobile') {
             this.initMobile();
         } else {
@@ -19,7 +20,28 @@ class PageLead2 extends Component {
     }
 
     initDesktop() {
-
+        /* === Слайдер для десктопа === */
+        const SwiperDesktop = new Swiper(this.nFindSingle('swiper-container'), {
+            slidesPerView: 'auto',
+            slidesPerColumn: 3,
+            slidesPerGroup: 2,
+            speed: 500,
+            spaceBetween: document.documentElement.clientWidth / 24,
+            slidesPerColumnFill: 'column',
+            direction: 'horizontal',
+            simulateTouch: false,
+            pagination: {
+                el: '.news-slider__swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return `<div class="${className}">${index + 1}</div>`;
+                },
+            },
+            navigation: {
+                nextEl: '.news-slider__swiper-button-next',
+                prevEl: '.news-slider__swiper-button-prev',
+            },
+        });
     }
 
     initMobile() {
@@ -57,4 +79,4 @@ class PageLead2 extends Component {
     }
 }
 
-export default PageLead2;
+export default NewsSlider;

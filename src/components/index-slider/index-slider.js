@@ -1,5 +1,7 @@
 import Component from '../../common/js/component';
-import { getDeviceType, listen, unlisten, nFindComponent, Resize } from '../../common/js/helpers';
+import {
+    getDeviceType, listen, unlisten, nFindComponent, Resize,
+} from '../../common/js/helpers';
 
 class IndexSlider extends Component {
     constructor(nRoot) {
