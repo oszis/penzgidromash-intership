@@ -1,6 +1,8 @@
+import Barba from 'barba.js';
 import Component from '../../common/js/component';
-import {loadImages, nGetBody, delay, isDirectEnter, unlisten, emit, listen} from '../../common/js/helpers';
-import Barba from "barba.js";
+import {
+    loadImages, nGetBody, delay, isDirectEnter, unlisten, emit, listen,
+} from '../../common/js/helpers';
 
 class Preloader extends Component {
     constructor(nRoot) {
@@ -24,17 +26,17 @@ class Preloader extends Component {
             if (isDirectEnter()) {
                 listen('preloaderAnimation:done', resolve);
             } else {
-                return resolve()
+                return resolve();
             }
         });
     }
 
     timerIfNotLoadingImages() {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 this.promiseAnimation();
             }, 9000);
-        })
+        });
     }
 
     async playbackOverPromise() {
@@ -42,8 +44,8 @@ class Preloader extends Component {
             (getDeviceType() !== 'mobile') ? loadImportantMedia() : false,
             loadImages(),
             commonComponents.lazyLoad.update(),
-            this.promiseAnimation()
-        ])
+            this.promiseAnimation(),
+        ]);
     }
 
     async preloading() {
@@ -51,11 +53,9 @@ class Preloader extends Component {
         this.nRoot.classList.remove('smooth-hide');
         await Promise.race([
             this.playbackOverPromise(),
-            this.timerIfNotLoadingImages()
+            this.timerIfNotLoadingImages(),
         ])
-            .then(() => {
-                return delay(300);
-            })
+            .then(() => delay(300))
             .then(() => {
                 if (!isDirectEnter()) {
                     emit('preloader:done', false, document);

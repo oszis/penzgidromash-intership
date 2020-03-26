@@ -1,5 +1,6 @@
 import Component from '../../common/js/component';
 
+
 class Header extends Component {
     constructor(nRoot) {
         super(nRoot, 'header');
@@ -96,6 +97,7 @@ class Header extends Component {
     }
 
     update() {
+        // document.querySelector('body').classList.remove('sandwich-open');
         /* === Обнуление классов для шапки === */
         this.nRoot.classList.remove('big-logo');
         this.nRoot.classList.remove('contrast-logo');

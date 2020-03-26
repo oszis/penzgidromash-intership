@@ -1,12 +1,17 @@
 import { commonComponents } from './commonComponents';
+/* === wtf fix === */
+import '../../vendor/split-text/js/vendor/TweenMax.min';
 
 const defaultTransition = (transition) => {
+
+    /* === wtf fix === */
+    document.querySelector('body').classList.remove('sandwich-open');
     // if (nGetBody()
     //     .classList
     //     .contains('sandwich-open')) {
     //     commonComponents.sandwichMenu.sandwichMenuClose.close(false);
     // }
-    commonComponents.header.addContrastClass();
+    // commonComponents.header.addContrastClass();
 
     commonComponents.lazyLoad.update();
     // loadImages();
