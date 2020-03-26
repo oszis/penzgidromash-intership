@@ -1,25 +1,19 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
-* {
-    //font-family: Gilroy, sans-serif;
-    //font-weight: 400;
-}
-
-/* === Не могу понять где находится этот блок, шрифты не менял === */
 
 .section-title {
     $root: &;
-    font-size: calc(12.502px + (1099.8vw - 8446.464px)/1152 + 12.502px + (1099.8vh - 7335.666px)/413)
+    @include font-4-desktop;
 }
 
 @media (max-width: 1199px) {
     .section-title {
-        margin: 0 60px;
+        @include font-4-tablet;
     }
 }
 @media (max-width: 767px) {
     .section-title {
-        font-size: 25px;
+        @include font-4-mobile;
         width: calc(100% - 60px);
     }
 }

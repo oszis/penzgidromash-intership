@@ -1,0 +1,38 @@
+extends ../../layout/layout
+include ../../components/page-lead-1/page-lead-1
+include ../../components/project-slider/project-slider
+include ../../components/equipment-slider/equipment-slider
+include ../../components/info-block-10/info-block-10
+include ../../components/reviews/reviews
+include ../../components/next-project/next-project
+
+block content
+    main#barba-wrapper
+        .barba-container(data-namespace='project-3' data-contrast='true')
+            +page-lead-1({
+                mainLink: '/',
+                name: 'Главная',
+                pageLink: '/projects.html',
+                subName: 'Проекты',
+                pageLinkUnder: '/project-3.html',
+                subNameUnder: 'ЛУКОЙЛ - Нижегороднефтеоргсинтез',
+                title: 'ЛУКОЙЛ-\nНижегороднефте\nоргсинтез',
+            })
+            .col-21.offset-1
+                +info-block-10
+            .col-23.offset-1
+                +project-slider
+            .col-23.offset-1
+                +equipment-slider
+            +reviews
+            +next-project({
+                imgPath: '../../common/images/next-project-bg.png',
+                linkBack: '/projects.html',
+                linkBackName: 'Вернуться к проектам',
+                text: 'Следующий проект',
+                title: 'Ванковское месторождение',
+                buttonLink: '/',
+                buttonName: 'Смотреть проект',
+            })
+
+

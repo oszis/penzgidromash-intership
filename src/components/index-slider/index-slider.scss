@@ -1,20 +1,15 @@
 @import '../../common/scss/fonts.scss';
 @import '../../common/scss/colors.scss';
-* {
-    //font-family: Gilroy, sans-serif;
-    //font-weight: 400;
-}
-a, a:active, a:hover, a:visited {
-    text-decoration: none;
-    outline: none;
-    //color: $black;
-}
+
 .index-slider {
     $root: &;
     position: relative;
     z-index: 2;
     background-color: $color-5;
     transition: background-color .5s;
+    &__swiper {
+        overflow: hidden;
+    }
 }
 .title-slider {
     display: flex;
@@ -48,7 +43,6 @@ a, a:active, a:hover, a:visited {
 }
 .title-slide__year {
     @include font-3-desktop;
-    //font-size: 25px;
     line-height: 1.9;
     color: $black;
     transition: color .5s;
@@ -207,42 +201,6 @@ a, a:active, a:hover, a:visited {
     pointer-events: none;
 }
 
-.slider-navigation__arrow.swiper-button-disabled:before {
-    transform: translateY(-50%) scalex(.35);
-}
-.slider-navigation__prev:before {
-    transform-origin: left center;
-}
-.slider-navigation__prev .slider-navigation__arrow-svg {
-    left: 0;
-}
-.slider-navigation__next:before {
-    transform-origin: right center;
-}
-.slider-navigation__next svg {
-    right: 0;
-    transform: rotate(180deg);
-}
-.slider-navigation_no-counter .slider-navigation__counter {
-    display: none;
-}
-.slider-navigation.about-slider_navigation {
-    flex-direction: row;
-    padding-top: 2px;
-}
-.slider-navigation.about-slider_navigation .slider-navigation__arrows {
-    display: block;
-    margin-left: 60px;
-}
-.slider-navigation.partners-slider__navigation {
-    align-items: flex-start;
-}
-.slider-navigation.partners-slider__navigation .slider-navigation__counter {
-    margin-bottom: 18.5vh;
-}
-.slider-navigation.slider-navigation_equipment {
-    height: 27vw;
-}
 @media (max-width: 1199px) {
     .index-slider {
         display:none;

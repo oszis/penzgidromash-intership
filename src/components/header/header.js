@@ -1,36 +1,31 @@
 import Component from '../../common/js/component';
 
+
 class Header extends Component {
     constructor(nRoot) {
         super(nRoot, 'header');
 
-
-        /* === TODO поиск компонентов через nRoot === */
+        /* === Необходимые переменные === */
         let windowHeight = document.documentElement.clientHeight;
         const body = document.querySelector('body');
-        const barbaContainer = document.querySelector('.barba-container');
-        const header = document.querySelector('.header');
-        const sandwichBtn = document.querySelector('.header__sandwich');
-        const arrowBtn = document.querySelector('.header__arrow');
+        const sandwichBtn = this.nFindSingle('sandwich');
+        const arrowBtn = this.nFindSingle('arrow');
 
-        /* === Входные значения шапки для страницы 'index' === */
-        /* === TODO должно вызываться при загрузке страницы в barba === */
+        /* === Атрибуты барба-контейнера === */
+        this.nNamespace = document.querySelector('.barba-container').getAttribute('data-namespace');
+        this.nContrast = document.querySelector('.barba-container').getAttribute('data-contrast');
 
-        if (barbaContainer.getAttribute('data-namespace') === 'index') {
-            header.classList.add('big-logo');
-            header.classList.add('contrast-logo');
-        }
+        this.update = this.update.bind(this);
+        this.update();
 
         /* === Клик по кнопке-сендвичу === */
-
         sandwichBtn.addEventListener('click', () => {
             body.classList.toggle('sandwich-open');
         });
 
         /* === Клик по кнопке скролла === */
-
         arrowBtn.addEventListener('click', () => {
-            if (header.classList.contains('arrow-down')) {
+            if (this.nRoot.classList.contains('arrow-down')) {
                 window.scrollTo({
                     top: windowHeight,
                     behavior: 'smooth',
@@ -44,49 +39,98 @@ class Header extends Component {
         });
 
         /* === Изменения шапки при скролле === */
-
         window.addEventListener('scroll', () => {
             windowHeight = document.documentElement.clientHeight;
-            /* === Появление навигации и изменение логотипа в начале документа === */
-            if (window.pageYOffset <= 0 && !header.classList.contains('header-top')) {
-                header.classList.toggle('header-top');
-                if (barbaContainer.getAttribute('data-namespace') === 'index' && !header.classList.contains('big-logo')) {
-                    header.classList.toggle('big-logo');
+            const footer = document.querySelector('.footer');
+
+            /* === Стандартное поведение скролла === */
+            if (window.pageYOffset <= 0) {
+                this.nRoot.classList.add('header-top');
+            } else {
+                this.nRoot.classList.remove('header-top');
+            }
+
+            /* === Поведение стрелки для скролла === */
+            if (window.pageYOffset < windowHeight - 1) {
+                this.nRoot.classList.remove('arrow-up');
+                this.nRoot.classList.add('arrow-down');
+            } else if (footer.getBoundingClientRect().top <= windowHeight) {
+                this.nRoot.classList.add('arrow-up');
+                this.nRoot.classList.remove('arrow-down');
+            } else {
+                this.nRoot.classList.remove('arrow-up');
+                this.nRoot.classList.remove('arrow-down');
+            }
+
+            /* === Поведение скролла на главной странице === */
+            if (this.nNamespace === 'index') {
+                const contacts = document.querySelector('.contacts');
+                if (window.pageYOffset <= 0) {
+                    this.nRoot.classList.add('big-logo');
+                } else {
+                    this.nRoot.classList.remove('big-logo');
                 }
-            } else if (window.pageYOffset > 0 && header.classList.contains('header-top')) {
-                header.classList.toggle('header-top');
-                if (barbaContainer.getAttribute('data-namespace') === 'index' && header.classList.contains('big-logo')) {
-                    header.classList.toggle('big-logo');
+
+                if (window.pageYOffset < windowHeight - 1) {
+                    this.nRoot.classList.add('contrast-logo');
+                } else if (contacts.getBoundingClientRect().top <= 100) {
+                    body.classList.add('contrast');
+                    if (document.documentElement.clientWidth >= 1200) {
+                        this.nRoot.classList.add('contrast-logo');
+                    }
+                } else {
+                    this.nRoot.classList.remove('contrast-logo');
+                    body.classList.remove('contrast');
                 }
             }
 
-            /* === Появление кнопки скролла только на первом и последнем 'экране' документа === */
-            if (window.pageYOffset < windowHeight - 1 || window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1) {
-                if (window.pageYOffset < windowHeight - 1) {
-                    header.classList.remove('arrow-up');
-                    header.classList.add('arrow-down');
-                } else if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1) {
-                    header.classList.add('arrow-up');
-                    header.classList.remove('arrow-down');
-                    if (barbaContainer.getAttribute('data-namespace') === 'index') {
-                        body.classList.add('contrast');
-                    }
+            /* === Поведение скролла на страницах с data-contrast === */
+            if (this.nContrast) {
+                const pageLead = document.querySelector('.page-lead-1');
+                if (window.pageYOffset < pageLead.scrollHeight - this.nRoot.scrollHeight * 0.5) {
+                    this.nRoot.classList.add('contrast-logo');
+                } else {
+                    this.nRoot.classList.remove('contrast-logo');
                 }
-                /* === Изменение логотипа, чтобы он не сливался с фоном на первом и последнем 'экране' документа === */
-                if (barbaContainer.getAttribute('data-namespace') === 'index') {
-                    if (window.pageYOffset < windowHeight - 1) {
-                        header.classList.add('contrast-logo');
-                    } else if (window.pageYOffset >= document.body.scrollHeight - windowHeight * 1.1 && document.documentElement.clientWidth >= 1200){
-                        header.classList.add('contrast-logo');
-                    }
-                }
-            } else {
-                header.classList.remove('arrow-up');
-                header.classList.remove('arrow-down');
-                header.classList.remove('contrast-logo');
-                body.classList.remove('contrast');
             }
         });
+    }
+
+    update() {
+        // document.querySelector('body').classList.remove('sandwich-open');
+        /* === Обнуление классов для шапки === */
+        this.nRoot.classList.remove('big-logo');
+        this.nRoot.classList.remove('contrast-logo');
+        this.nRoot.classList.remove('index-header');
+
+        /* === Добавление уникальных классов для шапки на главной странице  === */
+        this.nNamespace = document.querySelector('.barba-container').getAttribute('data-namespace');
+        if (this.nNamespace === 'index') {
+            this.nRoot.classList.add('big-logo');
+            this.nRoot.classList.add('contrast-logo');
+            this.nRoot.classList.add('index-header');
+        }
+
+        /* === Добавление уникальных классов для шапки на страницах с контрастом  === */
+        this.nContrast = document.querySelector('.barba-container').getAttribute('data-contrast');
+        if (this.nContrast) {
+            this.nRoot.classList.add('contrast-logo');
+        }
+
+        // this.nNamespace = document.querySelector('.barba-container').getAttribute('data-namespace');
+        // switch (this.nNamespace) {
+        // case 'index':
+        //     this.nRoot.classList.add('index-header');
+        //     this.nRoot.classList.add('big-logo');
+        //     this.nRoot.classList.add('contrast-logo');
+        //     break;
+        // case 'project-3':
+        //     this.nRoot.classList.add('contrast-logo');
+        //     break;
+        // default:
+        //     this.nRoot.classList.remove('big-logo');
+        //     this.nRoot.classList.remove('contrast-logo');
+        // }
     }
 
     destroy() {

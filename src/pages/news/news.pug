@@ -1,0 +1,16 @@
+extends ../../layout/layout
+include ../../components/page-lead-2/page-lead-2
+include ../../components/news-slider/news-slider
+
+block content
+    main#barba-wrapper
+        .barba-container(data-namespace='news')
+            +page-lead-2({
+                mainLink: '/',
+                name: 'Главная',
+                pageLink: '/news.html',
+                subName: 'Новости',
+                title: 'Новости',
+                descr: 'Емкостное и&nbsp;газовое оборудование для газовой и&nbsp;химической промышленности',
+            })
+            +news-slider(data.newsSlide)

@@ -17,7 +17,7 @@ import { commonComponents, initCommonComponents } from './commonComponents';
 const GeneralTransition = Barba.BaseTransition.extend({
     start() {
         this.newContainerLoading.then(() => {
-            const [sourceNamespace, targetNamespace] = [...document.querySelectorAll('[data-namespace]')].map(node => node.getAttribute('data-namespace'));
+            const [sourceNamespace, targetNamespace] = [...document.querySelectorAll('[data-namespace]')].map((node) => node.getAttribute('data-namespace'));
             const transition = getTransition(sourceNamespace, targetNamespace);
             if (isFunction(transition)) {
                 transition(this);
