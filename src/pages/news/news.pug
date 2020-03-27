@@ -1,6 +1,7 @@
 extends ../../layout/layout
 include ../../components/page-lead-2/page-lead-2
 include ../../components/news-slider/news-slider
+include ../../components/contact-us-footer-expansion/contact-us-footer-expansion
 
 block content
     main#barba-wrapper
@@ -14,3 +15,5 @@ block content
                 descr: 'Емкостное и&nbsp;газовое оборудование для газовой и&nbsp;химической промышленности',
             })
             +news-slider(data.newsSlide)
+            +contact-us-footer-expansion
+
