@@ -1,3 +1,27 @@
+include ../../common/pug/mixins
+
 mixin news-content(args)
     .news-content&attributes(attributes)
-        
+        .news-content__block-1
+            .news-content__img-container
+                +img({path: args.path ? args.path : './images/index-default.jpg'}).news-content__img
+            .news-content__text
+                h3!= args.title ? args.title : ''
+                p!= args.text1 ? args.text1 : ''
+                p!= args.text2 ? args.text2 : ''
+        .news-content__block-2
+            .news-content__block-2-item
+                p!= args.text3 ? args.text3 : ''
+            .news-content__block-2-item
+                p!= args.text4 ? args.text4 : ''
+        .news-content__quote
+            h2!= args.quote ? args.quote : ''
+        .news-content__reference
+            .news-content__reference-title!= args.refTitle ? args.refTitle : ''
+            .news-content__reference-text!= args.refText ? args.refText : ''
+
+
+
+
+
+

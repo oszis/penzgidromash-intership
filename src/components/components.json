@@ -104,6 +104,10 @@
   {
     "name": "news-content"
   },
+  {
     "name": "contact-us-footer-expansion"
+  },
+  {
+    "name": "gallery-slider"
   }
 ]
