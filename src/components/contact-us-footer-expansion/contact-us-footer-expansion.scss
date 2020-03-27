@@ -1,0 +1,83 @@
+.contact-us-footer-expansion {
+    $root: &;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width: $col-width * 23;
+    padding: 50px $col-width;
+    background-color: $main-color;
+    color: $color-5;
+    &__reqest {
+        transition: color .5s;
+        width: $col-width * 10;
+        @include font-3-desktop;
+    }
+
+    &__all {
+        transition: color .5s;
+        width: $col-width * 10;
+        @include font-3-desktop;
+    }
+
+    p {
+        margin-bottom: 44px;
+    }
+
+    &__line {
+        height: 1px;
+        width: 100%;
+        background-color: $color-5;
+        transition: background-color .5s;
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 19px;
+        cursor: pointer;
+        @include font-4-desktop;
+    }
+
+    &__arrowbox {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        margin-top: 11px;
+        margin-right: 11px;
+        overflow: hidden;
+    }
+
+    &__arrow {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        width: 46px;
+        height: 46px;
+        stroke: $color-5;
+        transition: top .4s, left .4s, stroke .5s;
+    }
+
+    &__arrow--hover {
+        position: absolute;
+        object-fit: cover;
+        top: 56px;
+        left: -56px;
+        width: 46px;
+        height: 46px;
+        stroke: $color-5;
+        transition: top .4s, left .4s, stroke .5s;
+    }
+
+    &__link:hover &__arrow {
+        top: -56px;
+        left: 56px
+    }
+
+    &__link:hover &__arrow--hover {
+        top: 0;
+        left: 0;
+    }
+}

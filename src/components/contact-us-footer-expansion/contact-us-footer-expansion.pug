@@ -1,0 +1,28 @@
+mixin contact-us-footer-expansion(args)
+    .contact-us-footer-expansion&attributes(attributes)
+        .contact-us-footer-expansion__all
+            p
+                | Пенза, ул. Аустрина, дом 63, корпус 7
+                br
+                | 8 (8412) 45-89-99
+                br
+                | om@penzgidromash.ru
+            .contact-us-footer-expansion__line
+            .contact-us-footer-expansion__link
+                a Все контакты
+                .contact-us-footer-expansion__arrowbox
+                    +svg({name: 'arrow_contacts'})(class = 'contact-us-footer-expansion__arrow')
+                    +svg({name: 'arrow_contacts'})(class = 'contact-us-footer-expansion__arrow--hover')
+        .contact-us-footer-expansion__reqest
+            p
+                | Оставьте заявку и менеджеры
+                br
+                |  свяжутся в удобное для вас время
+                br
+                br
+            .contact-us-footer-expansion__line
+            .contact-us-footer-expansion__link
+                a Оставьте заявку
+                .contact-us-footer-expansion__arrowbox
+                    +svg({name: 'arrow_contacts'})(class = 'contact-us-footer-expansion__arrow')
+                    +svg({name: 'arrow_contacts'})(class = 'contact-us-footer-expansion__arrow--hover')
