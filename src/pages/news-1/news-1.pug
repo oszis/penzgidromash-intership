@@ -1,0 +1,14 @@
+extends ../../layout/layout
+include ../../components/page-lead-2/page-lead-2
+
+block content
+    main#barba-wrapper
+        .barba-container(data-namespace='news-1')
+            +page-lead-2({
+                mainLink: '/',
+                name: 'Главная',
+                pageLink: '/news.html',
+                subName: 'Новости',
+                title: 'Новый проект введен в эксплуатацию',
+                descr: '31 августа 2019',
+            })
