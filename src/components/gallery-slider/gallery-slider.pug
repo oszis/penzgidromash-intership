@@ -1,3 +1,19 @@
+include ../../common/pug/mixins
+
 mixin gallery-slider(args)
     .gallery-slider&attributes(attributes)
-        
+        .gallery-slider__control
+            .swiper-pagination.gallery-slider__swiper-pagination
+            .gallery-slider__title!= 'Галерея'
+            .swiper-button-prev.gallery-slider__swiper-button-prev
+                +svg({ name: 'arrow-link' }).gallery-slider-svg.gallery-slider__swiper-button-prev-svg
+            .swiper-button-next.gallery-slider__swiper-button-next
+                +svg({ name: 'arrow-link' }).gallery-slider-svg.gallery-slider__swiper-button-next-svg
+        .swiper-container.gallery-slider__swiper-container
+            .swiper-wrapper.gallery-slider__swiper-wrapper
+                each slide in args
+                    .swiper-slide.gallery-slider__swiper-slide
+                        +img({
+                            path: slide.path ? slide.path : '../../common/images/default.jpg',
+                            lazy: true,
+                        }).gallery-slider__img

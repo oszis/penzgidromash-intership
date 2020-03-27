@@ -1,5 +1,6 @@
 import Component from '../../common/js/component';
 import { getDeviceType, listen, unlisten, nFindComponent, Resize } from '../../common/js/helpers';
+import Swiper from 'swiper/dist/js/swiper.min';
 
 class GallerySlider extends Component {
     constructor(nRoot) {
@@ -17,7 +18,21 @@ class GallerySlider extends Component {
     }
 
     initDesktop() {
-
+        const GalleryDesktop = new Swiper(this.nFindSingle('swiper-container'), {
+            slidesPerView: 'auto',
+            speed: 800,
+            // spaceBetween: (document.documentElement.clientWidth / 24) * 2,
+            spaceBetween: 0,
+            direction: 'horizontal',
+            pagination: {
+                el: '.gallery-slider__swiper-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.gallery-slider__swiper-button-next',
+                prevEl: '.gallery-slider__swiper-button-prev',
+            },
+        });
     }
 
     initMobile() {

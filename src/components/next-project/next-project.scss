@@ -108,6 +108,10 @@
     }
 }
 
+.next-project__content-back:first-letter {
+    text-transform: uppercase;
+}
+
 .next-project__content-back:active,
 .next-project__content-back:focus,
 .next-project__content-back:hover {

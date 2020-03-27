@@ -2,6 +2,8 @@ extends ../../layout/layout
 include ../../components/page-lead-2/page-lead-2
 include ../../components/news-content/news-content
 include ../../components/contact-us-footer-expansion/contact-us-footer-expansion
+include  ../../components/gallery-slider/gallery-slider
+include ../../components/next-project/next-project
 
 
 block content
@@ -31,5 +33,22 @@ block content
                 quote: '&laquo;Цитата.&nbsp;22&nbsp;февраля был введен в&nbsp;эксплуатацию новый проект&nbsp;&mdash; Чаядинское месторождение.&raquo;',
                 refTitle: 'Справка',
                 refText: 'Рыба! Габбро однородно. Окраска косвенно составляет слабоминерализованный триас, что обусловлено не&nbsp;только первичными неровностями эрозионно-тектонического рельефа поверхности кристаллических пород',
+            })
+            +gallery-slider([
+                {
+                    path: './images/gallery-1.jpg',
+                },
+                {
+                    path: './images/gallery-2.jpg',
+                }
+            ])
+            +next-project({
+                imgPath: './images/next.jpg',
+                linkBack: '/news.html',
+                linkBackName: 'Вернуться к новостям',
+                text: 'Следующая новость',
+                title: 'Новость компании рыбный текст, примерное написание Пензгидромаш производит',
+                buttonLink: '#',
+                buttonName: 'Смотреть новость',
             })
             +contact-us-footer-expansion
