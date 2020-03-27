@@ -1,0 +1,21 @@
+include ../form-input/form-input
+
+mixin contact-us-form(args)
+    .contact-us-form&attributes(attributes)
+        .contact-us-form__title Связаться
+        form.contact-us-form__form-block(name='contact-us-form__form-block' method='post')
+            .contact-us-form__info
+                | Наши сотрудники помогут выполнить подбор оборудования
+                | и&nbsp;расчет цены с&nbsp;учетом ваших требований
+            .contact-us-form__inputs
+                +form-input({text: 'Ваше имя*', name: 'name'})
+                +form-input({text: 'Компания/должность*', name: 'company'})
+            .contact-us-form__inputs
+                +form-input({text: 'Email*', name: 'email'})
+                +form-input({text: 'Номер телефона*', name: 'phone'})
+            //.contact-us-form__inputs
+            //    input(type='file' val="" multiple)
+            //    .contact-us-form__confirm-text
+            //        | Нажимая &laquo;Отправить&raquo;, Вы&nbsp;подтверждаете, что ознакомлены, полностью согласны
+            //        | и&nbsp;принимаете условия &laquo;Согласие на&nbsp;обработку персональных данных&raquo;.
+            //    input(type='submit')

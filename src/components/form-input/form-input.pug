@@ -1,0 +1,5 @@
+mixin form-input(args)
+    .form-input&attributes(attributes)
+        .form-input__text!= args.text
+        input(type='text' name!=args.name)
+        .form-input__error(class!=args.name + '-input-error')!='Ошибка'

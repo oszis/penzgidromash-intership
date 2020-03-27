@@ -7,17 +7,20 @@
     position: relative;
     overflow: hidden;
     width: $col-width * 23;
-    padding: 100px $col-width;
+    padding: 100px $col-width 50px;
     display: flex;
     color: $color-1;
-    &__title{
+
+    &__title {
         @include font-4-desktop;
         width: $col-width * 6;
     }
-    &__info{
+
+    &__info {
         width: $col-width * 15;
     }
-    &__info-item{
+
+    &__info-item {
         display: flex;
         border-bottom: 1px solid $color-1;
         height: 100px;

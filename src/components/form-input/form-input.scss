@@ -1,0 +1,40 @@
+@import '../../common/scss/colors';
+@import '../../common/scss/variables';
+@import '../../common/scss/typography';
+
+.form-input {
+    $root: &;
+
+    input {
+        width: $col-width * 7;
+        @include font-2-desktop;
+        box-sizing: border-box;
+        padding: 14px;
+        outline: none;
+        background-color: white;
+        border: 1px solid $color-3;
+        transition: border-color .5s;
+
+        &:focus {
+            border-color: #5551F7;
+        }
+    }
+
+    &__text {
+        @include font-2-desktop;
+    }
+
+    &__error {
+        opacity: 1;
+        font-weight: 300;
+        font-size: 1.0rem;
+        line-height: 180%;
+        color: $error-color;
+        transition: opacity .5s;
+        margin-bottom: 8px;
+
+        &--toggle {
+            opacity: 1;
+        }
+    }
+}

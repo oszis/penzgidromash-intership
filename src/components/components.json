@@ -99,15 +99,21 @@
     "name": "next-project"
   },
   {
-    "name": "news-slider"
+      "name": "news-slider"
   },
-  {
-    "name": "news-content"
-  },
-  {
-    "name": "contact-us-footer-expansion"
-  },
-  {
-    "name": "gallery-slider"
-  }
+    {
+        "name": "news-content"
+    },
+    {
+        "name": "contact-us-footer-expansion"
+    },
+    {
+        "name": "gallery-slider"
+    },
+    {
+        "name": "contact-us-form"
+    },
+    {
+        "name": "form-input"
+    }
 ]
