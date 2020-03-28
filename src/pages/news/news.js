@@ -1,6 +1,7 @@
 import Barba from 'barba.js';
 import { commonComponents } from '../../common/js/commonComponents';
 import NewsSlider from '../../components/news-slider/news-slider';
+import { listen, unlisten } from '../../common/js/helpers';
 
 Barba.BaseView.extend({
     namespace: 'news',
@@ -11,10 +12,12 @@ Barba.BaseView.extend({
         await commonComponents.preloader.preloading;
         commonComponents.header.update();
         objectFitPolyfill();
-        const slider = new NewsSlider(document.querySelector('.news-slider'));
+        this.slider = new NewsSlider(document.querySelector('.news-slider'));
+        listen('resize', this.slider.afterResize, window);
     },
     onLeave() {
-
+        unlisten('resize', this.slider.afterResize, window);
+        this.slider.destroy();
     },
     onLeaveCompleted() {
 

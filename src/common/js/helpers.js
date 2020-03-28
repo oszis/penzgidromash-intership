@@ -221,7 +221,9 @@ export const loadImages = (nImages = [...document.querySelectorAll('img[data-src
             setProgress();
             resolve(...args);
         };
-        nImage.setAttribute('src', nImage.getAttribute('data-src'));
+        /* === Было вот так === */
+        // nImage.setAttribute('src', nImage.getAttribute('data-src'));
+        nImage.setAttribute('src', nImage.getAttribute('src'));
         if (nImage.complete) {
             wrapperResolve();
         } else {

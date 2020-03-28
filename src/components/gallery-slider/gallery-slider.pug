@@ -15,5 +15,5 @@ mixin gallery-slider(args)
                     .swiper-slide.gallery-slider__swiper-slide
                         +img({
                             path: slide.path ? slide.path : '../../common/images/default.jpg',
-                            lazy: true,
+                            lazy: false,
                         }).gallery-slider__img

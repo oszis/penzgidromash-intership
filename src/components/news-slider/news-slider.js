@@ -21,7 +21,7 @@ class NewsSlider extends Component {
 
     initDesktop() {
         /* === Слайдер для десктопа === */
-        const SwiperDesktop = new Swiper(this.nFindSingle('swiper-container'), {
+        this.slider = new Swiper(this.nFindSingle('swiper-container'), {
             slidesPerView: 'auto',
             slidesPerColumn: 3,
             slidesPerGroup: 2,
@@ -33,7 +33,7 @@ class NewsSlider extends Component {
             pagination: {
                 el: '.news-slider__swiper-pagination',
                 clickable: true,
-                renderBullet: function (index, className) {
+                renderBullet(index, className) {
                     return `<div class="${className}">${index + 1}</div>`;
                 },
             },
@@ -45,7 +45,28 @@ class NewsSlider extends Component {
     }
 
     initMobile() {
-
+        /* === Слайдер для мобилок === */
+        this.slider = new Swiper(this.nFindSingle('swiper-container'), {
+            slidesPerView: 'auto',
+            slidesPerColumn: 3,
+            slidesPerGroup: 1,
+            speed: 500,
+            spaceBetween: document.documentElement.clientWidth / 24,
+            slidesPerColumnFill: 'column',
+            direction: 'horizontal',
+            simulateTouch: false,
+            pagination: {
+                el: '.news-slider__swiper-pagination',
+                clickable: true,
+                renderBullet(index, className) {
+                    return `<div class="${className}">${index + 1}</div>`;
+                },
+            },
+            navigation: {
+                nextEl: '.news-slider__swiper-button-next',
+                prevEl: '.news-slider__swiper-button-prev',
+            },
+        });
     }
 
     afterResize() {
@@ -62,11 +83,11 @@ class NewsSlider extends Component {
     }
 
     destroyDesktop() {
-
+        // this.slider = null;
     }
 
     destroyMobile() {
-
+        // this.slider = null;
     }
 
     destroy() {
